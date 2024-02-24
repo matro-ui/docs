@@ -8,9 +8,14 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+
+  themes: [
+    ["@easyops-cn/docusaurus-search-local", {}],
+  ],
+
   title: 'Matro UI Docs',
   tagline: '👁️ Highly optimized UI Components in one, tiny package for your React Applications.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon.svg',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -31,8 +36,10 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'uk', 'pl'],
   },
+
+
 
   presets: [
     [
@@ -66,71 +73,77 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Matro UI',
         logo: {
           alt: 'Matro UI',
           src: 'img/logo.svg',
+          srcDark: 'img/logo_dark.svg'
         },
         items: [
+          { to: '/blog', label: 'Quick Start', position: 'left' },
+          { to: '/blog', label: 'Components', position: 'left' },
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+
+
+          { type: "docsVersionDropdown", position: 'right' },
+          { type: "localeDropdown", position: 'right' },
+          // { type: "version", position: 'right' },
           {
-            href: 'https://github.com/matro-ui/docs',
-            label: 'GitHub',
+            type: 'html',
             position: 'right',
-          },
+            value: `<a href="https://github.com/gerwld/matro-ui/" target="_blank" class="gh_iconl"><span></span></a>`
+          }
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/gerwld/matro-ui',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
+      // footer: {
+      //   style: 'dark',
+      //   links: [
+      //     {
+      //       title: 'Docs',
+      //       items: [
+      //         {
+      //           label: 'Tutorial',
+      //           to: '/docs/intro',
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       title: 'Community',
+      //       items: [
+      //         {
+      //           label: 'Stack Overflow',
+      //           href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+      //         },
+      //         {
+      //           label: 'Discord',
+      //           href: 'https://discordapp.com/invite/docusaurus',
+      //         },
+      //         {
+      //           label: 'Twitter',
+      //           href: 'https://twitter.com/docusaurus',
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       title: 'More',
+      //       items: [
+      //         {
+      //           label: 'Blog',
+      //           to: '/blog',
+      //         },
+      //         {
+      //           label: 'GitHub',
+      //           href: 'https://github.com/gerwld/matro-ui',
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   copyright: `${new Date().getFullYear()} Matra UI`,
+      // },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
