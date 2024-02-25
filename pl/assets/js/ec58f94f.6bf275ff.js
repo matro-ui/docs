@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmatro_docs=self.webpackChunkmatro_docs||[]).push([[8021],{4361:t=>{t.exports=JSON.parse('{"title":"Components","description":"Styled Components.","slug":"/category/components","permalink":"/pl/docs/category/components","navigation":{"previous":{"title":"Getting Started","permalink":"/pl/docs/intro"},"next":{"title":"Inputs"}}}')}}]);
