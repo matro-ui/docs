@@ -4,40 +4,41 @@ sidebar_position: 1
 
 # `<Checkbox/>`
 
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
+The `Checkbox` component allows users to select or deselect options in a form. It provides a customizable checkbox input with various options.
 
-- `src/pages/index.js` → `localhost:3000/`
-- `src/pages/foo.md` → `localhost:3000/foo`
-- `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
+### Props
 
-## Create your first React Page
+- `value`: (boolean) The value of the checkbox.
+- `onChange`: (function) Callback function triggered when the checkbox value changes.
+- `name`: (string) The name attribute of the checkbox.
+- `checked`: (boolean) Indicates whether the checkbox is checked.
+- `toggle`: (boolean) Indicates whether the checkbox is in toggle mode.
+- `linear`: (boolean) Indicates whether the checkbox has a linear style.
 
-Create a file at `src/pages/my-react-page.js`:
+### Example Usage
 
-```jsx title="src/pages/my-react-page.js"
-import * as React from 'react';
-import Layout from '@theme/Layout';
+```jsx
+import React from 'react';
+import {Checkbox} from 'matro-iu';
 
-export default function MyReactPage() {
+function App() {
+  const handleCheckboxChange = (isChecked) => {
+    console.log('Checkbox checked state:', isChecked);
+  };
+
   return (
-    <Layout>
-      <h1>My React page</h1>
-      <p>This is a React page</p>
-    </Layout>
+    <div>
+      <Checkbox
+        value={true}
+        onChange={handleCheckboxChange}
+        name="exampleCheckbox"
+        checked={false}
+        toggle={false}
+        linear={true}
+      >
+        Example Checkbox
+      </Checkbox>
+    </div>
   );
 }
 ```
-
-A new page is now available at [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page).
-
-## Create your first Markdown Page
-
-Create a file at `src/pages/my-markdown-page.md`:
-
-```mdx title="src/pages/my-markdown-page.md"
-# My Markdown page
-
-This is a Markdown page
-```
-
-A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
