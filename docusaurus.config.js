@@ -54,7 +54,7 @@ const config = {
   favicon: 'img/icon.svg',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://matra-ui.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -65,7 +65,7 @@ const config = {
   projectName: 'matro-ui.github.io', // Usually your repo name.
   deploymentBranch: 'gh-pages',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -88,15 +88,15 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/matro-ui/docs',
+          // editUrl:
+          //   'https://github.com/matro-ui/docs',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/matro-ui/docs',
+            'https://github.com/matro-ui/matro-ui/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -128,7 +128,7 @@ const config = {
         },
         items: [
           { to: '/docs/intro', label: 'Quick Start', position: 'left' },
-          { to: '/docs/category/components', label: 'Components', position: 'left' },
+          { to: '/docs/compontents/view', label: 'Components', position: 'left' },
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',

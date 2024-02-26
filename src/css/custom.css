@@ -20,6 +20,7 @@
   --ed-border-color: #e6ecf0;
   --ifm-toc-border-color: #e9eff1;
   --ifm-menu-color: var(--ifm-color-emphasis-900);
+  --ifm-navbar-padding-horizontal: 0.5rem;
   font-size: 15px;
 }
 
@@ -112,7 +113,7 @@ li>a.menu__link {
   padding: 5px;
   margin-right: 0.5rem;
   transform: translateY(0.5px);
-  border-radius: 0.5rem;
+  border-radius: 0.45rem;
   transition: background 100ms ease;
 }
 
@@ -241,7 +242,7 @@ nav.menu>ul>li:nth-child(1)>*:nth-child(1) {
   overflow: hidden;
 }
 
-.menu__link--sublist-caret:after {
+ul ul .menu__link--sublist-caret:after {
   opacity: 0.4;
   background-size: 1.5rem 1.5rem;
 }
@@ -347,4 +348,87 @@ ul .menu__list-item-collapsible .menu__link--active {
 
 .pagination-nav.docusaurus-mt-lg {
   display: none;
+}
+
+.markdown {
+  --ifm-h1-vertical-rhythm-top: 3;
+  --ifm-h2-vertical-rhythm-top: 2;
+  --ifm-h3-vertical-rhythm-top: 1.5;
+  --ifm-heading-vertical-rhythm-top: 1.25;
+  --ifm-h1-vertical-rhythm-bottom: 0.8;
+  --ifm-heading-vertical-rhythm-bottom: 1;
+}
+
+body .navbar__search {
+  margin-left: 0.5rem;
+}
+
+.navbar__search-input {
+  height: 2.3rem;
+  padding: 0px 0.5rem 0px 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--ifm-navbar-dropdown-border-color);
+  background: transparent;
+  vertical-align: baseline;
+  line-height: 100%;
+}
+
+[data-theme="dark"] .navbar__search-input {
+  background: rgb(32, 32, 33);
+}
+
+[data-theme="dark"] .navbar__search::before {
+  background-color: var(--ifm-navbar-search-input-placeholder-color);
+}
+
+.navbar__search::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  top: calc(50% - 0.5rem);
+  left: 0.66rem;
+  background-color: #0f0f0f;
+  mask-image: var(--ifm-navbar-search-input-icon);
+  -webkit-mask-image: var(--ifm-navbar-search-input-icon);
+  pointer-events: none;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  z-index: 10;
+}
+
+
+
+.navbar__search kbd {
+  --border-color: #c9ced5;
+  display: flex;
+  align-items: center;
+  line-height: 1.6rem;
+  height: 1.33rem;
+  padding: 0 0.2rem;
+  font: inherit;
+  font-weight: 500;
+
+  font-size: 1rem;
+  border-color: var(--border-color);
+  box-shadow: 0px 2px 0 0 var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar__search kbd:nth-child(1) {
+  font-size: 1.08em;
+}
+
+[data-theme="dark"] .navbar__search kbd {
+  --border-color: #62666b;
+}
+
+body .searchHintContainer_node_modules-\@easyops-cn-docusaurus-search-local-dist-client-client-theme-SearchBar-SearchBar-module {
+  right: 7px;
+  top: -1px;
 }
