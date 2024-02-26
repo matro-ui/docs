@@ -6,8 +6,44 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+
+  plugins: [
+    function (context, options) {
+      return {
+        name: 'webpack-configuration-plugin',
+        configureWebpack(config, isServer, utils) {
+          return {
+            module: {
+              rules: [
+                {
+                  test: /\.jsx?$/,
+                  include: /node_modules/,
+                  use: [
+                    {
+                      loader: require.resolve('babel-loader'),
+                      options: {
+                        presets: [
+                          [require.resolve('@babel/preset-react'), {
+                            runtime: "automatic",
+                            importSource: 'react',
+                          }],
+                          [require.resolve('@babel/preset-env'), { targets: { node: 'current' } }],
+                        ],
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          };
+        },
+      };
+    },
+  ],
+
 
   themes: [
     ["@easyops-cn/docusaurus-search-local", {}],
@@ -48,6 +84,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          breadcrumbs: true,
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -71,8 +108,18 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      docs: {
+        sidebar: {
+          autoCollapseCategories: false,
+        },
+      },
       navbar: {
         logo: {
           alt: 'Matro UI',
@@ -80,8 +127,8 @@ const config = {
           srcDark: 'img/logo_dark.svg'
         },
         items: [
-          { to: '/blog', label: 'Quick Start', position: 'left' },
-          { to: '/blog', label: 'Components', position: 'left' },
+          { to: '/docs/intro', label: 'Quick Start', position: 'left' },
+          { to: '/docs/category/components', label: 'Components', position: 'left' },
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
@@ -89,62 +136,16 @@ const config = {
             label: 'Docs',
           },
 
-
-          { type: "docsVersionDropdown", position: 'right' },
+          // { type: "docsVersionDropdown", position: 'right' },
           { type: "localeDropdown", position: 'right' },
           // { type: "version", position: 'right' },
           {
             type: 'html',
             position: 'right',
-            value: `<a href="https://github.com/gerwld/matro-ui/" target="_blank" class="gh_iconl"><span></span></a>`
+            value: `<a href="https://github.com/matro-ui/matro-ui/" target="_blank" class="gh_iconl"><span></span></a>`
           }
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     {
-      //       title: 'Docs',
-      //       items: [
-      //         {
-      //           label: 'Tutorial',
-      //           to: '/docs/intro',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'Community',
-      //       items: [
-      //         {
-      //           label: 'Stack Overflow',
-      //           href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-      //         },
-      //         {
-      //           label: 'Discord',
-      //           href: 'https://discordapp.com/invite/docusaurus',
-      //         },
-      //         {
-      //           label: 'Twitter',
-      //           href: 'https://twitter.com/docusaurus',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'More',
-      //       items: [
-      //         {
-      //           label: 'Blog',
-      //           to: '/blog',
-      //         },
-      //         {
-      //           label: 'GitHub',
-      //           href: 'https://github.com/gerwld/matro-ui',
-      //         },
-      //       ],
-      //     },
-      //   ],
-      //   copyright: `${new Date().getFullYear()} Matra UI`,
-      // },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,

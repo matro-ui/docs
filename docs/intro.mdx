@@ -1,0 +1,65 @@
+---
+sidebar_position: 1
+title: Getting Started
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../src/css/mdx.module.css';
+
+
+# Getting Started
+
+
+## Step 1: Installation
+
+
+To use Matro UI in your project, run one of the following commands in your terminal:
+
+<div className={s.tabs + " " + s.tabs_ic}>
+<Tabs>
+ <TabItem value="pnm" label="npm" attributes={{className: s.npm}}>
+```bash
+npm install matro-ui
+```
+  </TabItem>
+  <TabItem value="yarn" label="yarn" attributes={{className: s.yarn}}>
+```bash
+yarn add matro-ui
+```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm" attributes={{className: s.pnpm}}>
+```bash
+pnpm add matro-ui
+```
+  </TabItem>
+  <TabItem value="bun" label="bun" attributes={{className: s.bun}}>
+```bash
+bun add matro-ui
+```
+  </TabItem>
+</Tabs>
+</div>
+
+After installing Matra UI, no further actions are required. By design, we decided not to overload Matra with Context Providers and other "heavy" things. However, this may change in the future.
+
+## Step 2: Add your first Component
+
+Here's a quick example of how you can do it using something like Create React App:
+
+```js
+import React from "react";
+import * as ReactDOM from 'react-dom';
+import { Button } from "matro-ui";
+ 
+ReactDOM.render(
+  <Button>This button looks great.</Button>,
+  document.getElementById("root")
+);
+```
+
+## Conclusion
+
+You've successfully installed Matro UI and added your first component to your project. Now, you're ready to dive deeper and explore the full range of components and features Matro UI has to offer. Whether you're building a simple website or a complex web application, Matro UI provides you with the tools you need to create beautiful and functional user interfaces.
+
+To explore more components, check out the <a href="/docs/category/components">components page</a>. Happy coding!
