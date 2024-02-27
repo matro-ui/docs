@@ -17,23 +17,23 @@ import s from '../src/css/mdx.module.css';
 To use Matro UI in your project, run one of the following commands in your terminal:
 
 <div className={s.tabs + " " + s.tabs_ic}>
-<Tabs>
- <TabItem value="pnm" label="npm" attributes={{className: s.npm}}>
+<Tabs className={s.parent}>
+ <TabItem value="pnm" label="npm" attributes={{className: [s.item, s.npm]}}>
 ```bash
 npm install matro-ui
 ```
   </TabItem>
-  <TabItem value="yarn" label="yarn" attributes={{className: s.yarn}}>
+  <TabItem value="yarn" label="yarn" attributes={{className: [s.item, s.yarn]}}>
 ```bash
 yarn add matro-ui
 ```
   </TabItem>
-  <TabItem value="pnpm" label="pnpm" attributes={{className: s.pnpm}}>
+  <TabItem value="pnpm" label="pnpm" attributes={{className: [s.item, s.pnpm]}}>
 ```bash
 pnpm add matro-ui
 ```
   </TabItem>
-  <TabItem value="bun" label="bun" attributes={{className: s.bun}}>
+  <TabItem value="bun" label="bun" attributes={{className: [s.item, s.bun]}}>
 ```bash
 bun add matro-ui
 ```
