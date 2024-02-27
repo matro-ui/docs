@@ -5,45 +5,11 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from 'prism-react-renderer';
-
+const path = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-
-  plugins: [
-    function (context, options) {
-      return {
-        name: 'webpack-configuration-plugin',
-        configureWebpack(config, isServer, utils) {
-          return {
-            module: {
-              rules: [
-                {
-                  test: /\.jsx?$/,
-                  include: /node_modules/,
-                  use: [
-                    {
-                      loader: require.resolve('babel-loader'),
-                      options: {
-                        presets: [
-                          [require.resolve('@babel/preset-react'), {
-                            runtime: "automatic",
-                            importSource: 'react',
-                          }],
-                          [require.resolve('@babel/preset-env'), { targets: { node: 'current' } }],
-                        ],
-                      },
-                    },
-                  ],
-                },
-              ],
-            },
-          };
-        },
-      };
-    },
-  ],
-
+  plugins: ['docusaurus-plugin-fix-react'],
 
   themes: [
     ["@easyops-cn/docusaurus-search-local", {}],
