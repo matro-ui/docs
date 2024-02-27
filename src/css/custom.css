@@ -428,6 +428,8 @@ body .navbar__search {
   --border-color: #62666b;
 }
 
+body .navbar__search div:nth-last-child(1),
+body .searchHintContainer_Pkmr,
 body .searchHintContainer_node_modules-\@easyops-cn-docusaurus-search-local-dist-client-client-theme-SearchBar-SearchBar-module {
   right: 7px;
   top: -1px;
