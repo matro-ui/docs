@@ -4,3 +4,11 @@
   padding: 0.5em 0 3em;
   font-size: 0.9em;
 }
+
+.sources a {
+  height: 2em;
+}
+
+.sources a:hover {
+  color: inherit;
+}

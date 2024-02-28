@@ -15,6 +15,12 @@
   border-bottom-color: var(--color);
 }
 
+.preview_box {
+  padding: 0.8rem max(3%, 15px);
+  border: 1px solid var(--ifm-navbar-dropdown-border-color);
+  border-radius: 0.5em;
+}
+
 .parent {
   position: relative;
 }

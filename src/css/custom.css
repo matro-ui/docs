@@ -21,6 +21,7 @@
   --ifm-toc-border-color: #e9eff1;
   --ifm-menu-color: var(--ifm-color-emphasis-900);
   --ifm-navbar-padding-horizontal: 0.5rem;
+  --ifm-hover-overlay: #f2f4ff;
   font-size: 15px;
 }
 
@@ -44,6 +45,12 @@
   --ifm-navbar-dropdown-border-color: rgb(65, 65, 65);
   --ed-border-color: #2b2b2d;
   --ifm-toc-border-color: #2d3035;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 2em 0 1em;
 }
 
 [data-theme="dark"] aside {
@@ -433,4 +440,29 @@ body .searchHintContainer_Pkmr,
 body .searchHintContainer_node_modules-\@easyops-cn-docusaurus-search-local-dist-client-client-theme-SearchBar-SearchBar-module {
   right: 7px;
   top: -1px;
+}
+
+code {
+  background-color: #dfe6ff;
+  color: #3e4293;
+  border: none;
+  border-radius: 0.2em;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: var(--ifm-code-font-size);
+  padding: 0.2em 0.3em;
+  vertical-align: middle;
+}
+
+[data-theme="dark"] code {
+  background-color: rgb(48 55 73);
+  color: #c2c7ea;
+}
+
+[data-theme="dark"] pre code {
+  background-color: transparent;
+}
+
+pre+div>button {
+  opacity: 0.8 !important;
+  justify-content: center;
 }
