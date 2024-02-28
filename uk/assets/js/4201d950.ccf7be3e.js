@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmatro_docs=self.webpackChunkmatro_docs||[]).push([[4678],{8306:o=>{o.exports=JSON.parse('{"permalink":"/uk/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
