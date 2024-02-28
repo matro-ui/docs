@@ -1,6 +1,7 @@
 import React from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import CodeInline from '@theme/CodeInline';
+import * as provider from "matro-ui";
 function shouldBeInline(props) {
   return (
     // empty code blocks have no props.children,
@@ -15,6 +16,6 @@ export default function MDXCode(props) {
   return shouldBeInline(props) ? (
     <CodeInline {...props} />
   ) : (
-    <CodeBlock {...props} />
+    <CodeBlock {...props} scope={{ ...provider }} />
   );
 }

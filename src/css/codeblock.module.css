@@ -1,0 +1,32 @@
+.codeParent {
+  position: relative;
+}
+
+.codeButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.codeButton {
+  right: calc(var(--ifm-pre-padding) / 2);
+  top: calc(var(--ifm-pre-padding) / 2);
+}
+
+.codeButton {
+  display: flex;
+  align-items: center;
+  background: var(--prism-background-color, transparent);
+  color: var(--prism-color, #fff);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 0.4rem;
+  line-height: 0;
+  transition: opacity var(--ifm-transition-fast) ease-in-out;
+  opacity: 0.6;
+}
+
+.codeButton:focus-visible,
+.codeButton:hover {
+  opacity: 1 !important;
+}

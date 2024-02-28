@@ -17,6 +17,7 @@
 
 .preview_box {
   padding: 0.8rem max(3%, 15px);
+  margin-bottom: 0.3rem;
   border: 1px solid var(--ifm-navbar-dropdown-border-color);
   border-radius: 0.5em;
 }

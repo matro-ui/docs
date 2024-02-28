@@ -6,6 +6,8 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 const path = require('path');
+const prism_theme1 = { ...prismThemes.dracula, plain: { color: prismThemes.dracula.plain.color || "black", backgroundColor: "var(--ifme-codeblock-bg)" } };
+const prism_theme = prismThemes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,9 +15,7 @@ const config = {
 
   themes: [
     ["@easyops-cn/docusaurus-search-local", {}],
-    ["@docusaurus/theme-live-codeblock", {
-      playgroundPosition: 'bottom'
-    }]
+    "@docusaurus/theme-live-codeblock"
   ],
 
   title: 'Matro UI Docs',
@@ -42,7 +42,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'uk', 'pl'],
+    locales: ['en'],
   },
 
 
@@ -77,6 +77,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      liveCodeBlock: {
+        playgroundPosition: 'top',
+      },
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
@@ -116,8 +119,8 @@ const config = {
         ],
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prism_theme,
+        darkTheme: prism_theme,
       },
     }),
 };

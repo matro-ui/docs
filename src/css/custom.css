@@ -22,6 +22,7 @@
   --ifm-menu-color: var(--ifm-color-emphasis-900);
   --ifm-navbar-padding-horizontal: 0.5rem;
   --ifm-hover-overlay: #f2f4ff;
+  --ifme-codeblock-bg: rgb(40, 42, 54);
   font-size: 15px;
 }
 
@@ -50,7 +51,7 @@
 h2 {
   font-size: 1.8rem;
   font-weight: 600;
-  margin: 2em 0 1em;
+  margin: 2em 0 0.5em;
 }
 
 [data-theme="dark"] aside {
@@ -462,7 +463,10 @@ code {
   background-color: transparent;
 }
 
-pre+div>button {
-  opacity: 0.8 !important;
-  justify-content: center;
+ul {
+  padding: 0 0 0 2rem;
+}
+
+ul code {
+  margin: -1px 0.2em 0 0;
 }

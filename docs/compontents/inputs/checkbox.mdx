@@ -7,6 +7,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import s from '../../../src/css/mdx.module.css';
 import Sources from "../../../assets/components/Sources/Sources";
+import I from "../../../assets/components/I";
 import {Checkbox} from "matro-ui";
 
 # Checkbox
@@ -33,19 +34,58 @@ import { Checkbox } from "matro-ui";
 
  ## Usage
 
- <div className={s.preview_box}>
-  <Checkbox name="checkbox-name-prop">
-    Clickable Label
-  </Checkbox>
- </div>
-
  ```jsx live 
-   <Checkbox name="checkbox-name-prop">
-    Clickable Label
-  </Checkbox>
+   <Checkbox>Checkbox</Checkbox>
 ```
 
+ ## Disabled Checkbox
 
+ ```jsx live 
+ <Stack style={{gap: 20}}>
+  <Checkbox disabled>
+    Checkbox
+  </Checkbox>
+  <Checkbox disabled checked>
+    Checkbox
+  </Checkbox>
+  </Stack>
+```
+
+ ## Checkbox sizes
+
+ Pass the <I>font-size</I> to change the size of the Checkbox. Values can be either <I>px</I>, <I>em</I>, <I>rem</I> or <I>%</I>.
+
+ ```jsx live 
+ <Stack style={{gap: 20, alignItems: "flex-end"}}>
+   <Checkbox style={{fontSize: "14px"}} checked>
+    Checkbox
+  </Checkbox>
+  <Checkbox style={{fontSize: "16px"}} checked>
+    Checkbox
+  </Checkbox>
+  <Checkbox style={{fontSize: "1.2rem"}} checked>
+    Checkbox
+  </Checkbox>
+  </Stack>
+```
+
+ ## Checkbox with custom color
+
+ You can override the color scheme of the <I>Checkbox</I> to any color by providing the css variable <I>--bg</I>.
+
+ ```jsx live 
+ <Stack style={{gap: 20, alignItems: "flex-end"}}>
+  <Checkbox style={{"--bg": "red"}} checked>
+    Checkbox
+  </Checkbox>
+  <Checkbox style={{"--bg": "#48b048"}} checked>
+    Checkbox
+  </Checkbox>
+  <Checkbox style={{"--bg": "#4848d7"}} checked>
+    Checkbox
+  </Checkbox>
+  </Stack>
+```
 
 
   </TabItem>

@@ -1,0 +1,55 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.playgroundContainer {
+  --border-rd: 0.5rem;
+  margin-bottom: var(--ifm-leading);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  overflow: hidden;
+}
+
+.playgroundHeader {
+  letter-spacing: 0.08rem;
+  max-height: 1.8rem;
+  padding: 0.2rem 0.2rem 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background: var(--ifme-codeblock-bg);
+  color: #565867;
+  text-align: center;
+
+  border-radius: var(--border-rd);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.playgroundHeader+div>pre {
+  border-radius: var(--border-rd);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-bottom: 1.5rem !important;
+}
+
+.playgroundEditor {
+  font: var(--ifm-code-font-size) / var(--ifm-pre-line-height) var(--ifm-font-family-monospace) !important;
+  /* rtl:ignore */
+  direction: ltr;
+}
+
+.playgroundPreview {
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: var(--border-rd);
+  background-color: transparent;
+  padding: 0.8rem max(3%, 15px);
+  border: 1px solid var(--ifm-navbar-dropdown-border-color);
+  border-radius: 0.5em;
+}
