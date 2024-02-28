@@ -7,6 +7,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import s from '../../../src/css/mdx.module.css';
 import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
 import I from "../../../assets/components/I";
 import {Checkbox} from "matro-ui";
 
@@ -42,12 +43,12 @@ import { Checkbox } from "matro-ui";
 
  ```jsx live 
  <Stack style={{gap: 20}}>
-  <Checkbox disabled>
-    Checkbox
-  </Checkbox>
-  <Checkbox disabled checked>
-    Checkbox
-  </Checkbox>
+    <Checkbox disabled>
+      Checkbox
+    </Checkbox>
+    <Checkbox disabled checked>
+      Checkbox
+    </Checkbox>
   </Stack>
 ```
 
@@ -57,15 +58,15 @@ import { Checkbox } from "matro-ui";
 
  ```jsx live 
  <Stack style={{gap: 20, alignItems: "flex-end"}}>
-   <Checkbox style={{fontSize: "14px"}} checked>
-    Checkbox
-  </Checkbox>
-  <Checkbox style={{fontSize: "16px"}} checked>
-    Checkbox
-  </Checkbox>
-  <Checkbox style={{fontSize: "1.2rem"}} checked>
-    Checkbox
-  </Checkbox>
+    <Checkbox style={{fontSize: "14px"}} checked>
+      Checkbox
+    </Checkbox>
+    <Checkbox style={{fontSize: "16px"}} checked>
+      Checkbox
+    </Checkbox>
+    <Checkbox style={{fontSize: "1.2rem"}} checked>
+      Checkbox
+    </Checkbox>
   </Stack>
 ```
 
@@ -94,46 +95,46 @@ import { Checkbox } from "matro-ui";
   <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
 ## Props
 
-- `value`: (boolean) The value of the checkbox.
-- `onChange`: (function) Callback function triggered when the checkbox value changes.
-- `name`: (string) The name attribute of the checkbox.
-- `checked`: (boolean) Indicates whether the checkbox is checked.
-- `toggle`: (boolean) Indicates whether the checkbox is in toggle mode.
-- `linear`: (boolean) Indicates whether the checkbox has a linear style.
-{/*  */}
+<PropsBlock payload={[
+{
+  title: "value",
+  type: "boolean",
+  desc: "The value of the checkbox."
+},
+{
+  title: "onChange",
+  type: "function",
+  desc: "Callback function triggered when the checkbox value changes.",
+},
+{
+  title: "name",
+  type: "string",
+  desc: "The name attribute of the checkbox.",
+},
+{
+  title: "checked",
+  type: "boolean",
+  desc: "Indicates whether the checkbox is checked.",
+},
+{
+  title: "toggle",
+  type: "boolean",
+  desc: "Indicates whether the checkbox is in toggle mode.",
+},
+{
+  title: "linear",
+  type: "boolean",
+  desc: "Indicates whether the checkbox has a linear type of animation.",
+},
+
+]}/>
+
   </TabItem>
 
 
 
-  <TabItem value="extra" label="Extra Features" attributes={{className: [s.item, s.extra]}}>
-## Example Usage
-
-```jsx
-import React from 'react';
-import {Checkbox} from 'matro-iu';
-
-function App() {
-  const handleCheckboxChange = (isChecked) => {
-    console.log('Checkbox checked state:', isChecked);
-  };
-
-  return (
-    <div>
-      <Checkbox
-        value={true}
-        onChange={handleCheckboxChange}
-        name="exampleCheckbox"
-        checked={false}
-        toggle={false}
-        linear={true}
-      >
-        Example Checkbox
-      </Checkbox>
-    </div>
-  );
-}
-```
-  </TabItem>
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
 
 
 

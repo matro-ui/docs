@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: <InputText/>
+title: <InputNumber/>
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,9 +11,9 @@ import PropsBlock from "../../../assets/components/Props/Props.jsx";
 import I from "../../../assets/components/I";
 import { Checkbox } from "matro-ui";
 
-# InputText
+# InputNumber
 
-The `<InputText/>` component allows to select or deselect options in a form. It provides a customizable checkbox input with various options.
+The `<InputNumber/>` component allows to select or deselect options in a form. It provides a customizable checkbox input with various options.
 
 <Sources 
   git="https://github.com/matro-ui/matro-ui/tree/main/dist/inputs/Checkbox"
@@ -28,7 +28,7 @@ The `<InputText/>` component allows to select or deselect options in a form. It 
 ## Import 
 
 ```jsx
-import { InputText, InputTextField } from "matro-ui";
+import { InputNumber, InputNumberField } from "matro-ui";
 ```
 - `InputNumber`: The wrapper that provides context and logic to the components.
 - `InputNumberField`: The <I>input</I> field itself.
@@ -37,17 +37,17 @@ import { InputText, InputTextField } from "matro-ui";
  ## Usage
 
  ```jsx live 
-  <InputText placeholder="Start typing...">
-    <InputTextField/>
-  </InputText>
+  <InputNumber>
+    <InputNumberField/>
+  </InputNumber>
 ```
 
  ## Disabled Input
 
  ```jsx live 
-  <InputText disabled placeholder="Disabled">
-    <InputTextField/>
-  </InputText>
+  <InputNumber disabled>
+    <InputNumberField/>
+  </InputNumber>
 ```
 
  ## Combination of blocks
@@ -56,16 +56,16 @@ import { InputText, InputTextField } from "matro-ui";
 
  ```jsx live 
 <Stack column>
-  <LabelText>Example of currency-num</LabelText>
-  <InputNumber placeholder="0.00">
-    <InputChildPrefix value="$"/>
-    <InputNumberField/>
-    <InputChildSelect name="select-name-prop" defaultValue="pln">
-      <option value="eur">EUR</option>
-      <option value="usd">USD</option>
-      <option value="pln">PLN</option>
-    </InputChildSelect>
-  </InputNumber>
+    <LabelText>Example of currency-num</LabelText>
+    <InputNumber placeholder="0.00">
+      <InputChildPrefix value="$"/>
+      <InputNumberField/>
+      <InputChildSelect name="select-name-prop" defaultValue="pln">
+        <option value="eur">EUR</option>
+        <option value="usd">USD</option>
+        <option value="pln">PLN</option>
+      </InputChildSelect>
+    </InputNumber>
 </Stack>
 ```
  ```js live 
@@ -89,16 +89,16 @@ function Search () {
 ```
 ```jsx live 
   <label>
-  <LabelText>Example of link-text</LabelText>
-    <InputText
-      color="cyangreen"
-      placeholder="example.com"
-      name="input-name-prop"
-    >
-    <InputChildPrefix value="https://"/>
-    <InputTextField/>
-    <InputChildSelect/>
-  </InputText>
+      <LabelText>Example of link-text</LabelText>
+      <InputText
+        color="cyangreen"
+        placeholder="example.com"
+        name="input-name-prop"
+      >
+        <InputChildPrefix value="https://"/>
+        <InputTextField/>
+        <InputChildSelect/>
+      </InputText>
   </label> 
 ```
 
@@ -107,7 +107,7 @@ function Search () {
 
   <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
 
-<PropsBlock title={<div>Props of <code>{`<InputText/>`}</code> or <code>{`<InputNumber/>`}</code>:</div>} payload={[
+<PropsBlock title={<div>Props of <code>{`<InputNumber/>`}</code> or <code>{`<InputText/>`}</code>:</div>} payload={[
 {
   title: "value",
   type: "boolean",

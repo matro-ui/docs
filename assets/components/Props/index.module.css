@@ -1,0 +1,31 @@
+.title {
+  display: inline-block;
+  line-height: 100%;
+  padding: 0.4em 0.6em;
+  margin: -1px 0.2em 0.3rem 0;
+  background-color: rgb(48 55 73);
+  color: #c2c7ea;
+  border-radius: 0.2em;
+}
+
+.content {
+  padding: 0.5rem 0 1.5rem;
+  border-top: 1px solid var(--ifm-navbar-dropdown-border-color);
+}
+
+.content div {
+  display: flex;
+}
+
+.content span {
+  padding: 0.4em 0.4em;
+}
+
+.content span:nth-child(1) {
+  flex: 0 0 25%
+}
+
+.act_color {
+  font-size: 0.9em;
+  color: var(--ifm-breadcrumb-color-active);
+}
