@@ -13,6 +13,9 @@ const config = {
 
   themes: [
     ["@easyops-cn/docusaurus-search-local", {}],
+    ["@docusaurus/theme-live-codeblock", {
+      playgroundPosition: 'bottom'
+    }]
   ],
 
   title: 'Matro UI Docs',
