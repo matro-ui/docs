@@ -121,6 +121,11 @@ const config = {
       prism: {
         theme: prism_theme,
         darkTheme: prism_theme,
+        magicComments: [{
+          className: 'theme-code-block-highlighted-line',
+          line: 'highlight-next-line',
+          block: { start: 'highlight-start', end: 'highlight-end' },
+        },]
       },
     }),
 };
