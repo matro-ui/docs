@@ -11,14 +11,14 @@ import PropsBlock from "../../../assets/components/Props/Props.jsx";
 import I from "../../../assets/components/I";
 import { Checkbox } from "matro-ui";
 
-# InputNumber
+# Number Input
 
-The `<InputNumber/>` component allows to select or deselect options in a form. It provides a customizable checkbox input with various options.
+The `<InputNumber/>` component is similar to the Input component, but it has controls for incrementing or decrementing numeric values.
 
 <Sources 
-  git="https://github.com/matro-ui/matro-ui/tree/main/dist/inputs/Checkbox"
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/inputs/InputNumber"
   npmjs="https://www.npmjs.com/package/matro-ui" 
-  name="checkbox"
+  name="inputnumber"
 />
 
 
@@ -56,16 +56,16 @@ import { InputNumber, InputNumberField } from "matro-ui";
 
  ```jsx live 
 <Stack column>
-    <LabelText>Example of currency-num</LabelText>
-    <InputNumber placeholder="0.00">
-      <InputChildPrefix value="$"/>
-      <InputNumberField/>
-      <InputChildSelect name="select-name-prop" defaultValue="pln">
-        <option value="eur">EUR</option>
-        <option value="usd">USD</option>
-        <option value="pln">PLN</option>
-      </InputChildSelect>
-    </InputNumber>
+  <LabelText>Example of currency-num</LabelText>
+  <InputNumber placeholder="0.00">
+    <InputChildPrefix value="$"/>
+    <InputNumberField/>
+    <InputChildSelect name="select-name-prop" defaultValue="pln">
+      <option value="eur">EUR</option>
+      <option value="usd">USD</option>
+      <option value="pln">PLN</option>
+    </InputChildSelect>
+  </InputNumber>
 </Stack>
 ```
  ```js live 
@@ -75,7 +75,7 @@ function Search () {
     setValue(e.target.value);
   } 
   return(
-  <Stack column>
+<Stack column>
     <LabelText>Example of search</LabelText>
     <InputText placeholder="Search..." value={value} onChange={handleChange}>
       <InputTextField/>
@@ -83,22 +83,22 @@ function Search () {
         children={<IoSearch />} 
         onClick={() => {alert("Query: " + value); setValue("");}}/>
     </InputText>
-  </Stack>
+ </Stack>
   );
 }
 ```
 ```jsx live 
   <label>
-      <LabelText>Example of link-text</LabelText>
-      <InputText
-        color="cyangreen"
-        placeholder="example.com"
-        name="input-name-prop"
-      >
-        <InputChildPrefix value="https://"/>
-        <InputTextField/>
-        <InputChildSelect/>
-      </InputText>
+    <LabelText>Example of link-text</LabelText>
+    <InputText
+      color="cyangreen"
+      placeholder="example.com"
+      name="input-name-prop"
+    >
+      <InputChildPrefix value="https://"/>
+      <InputTextField/>
+      <InputChildSelect/>
+    </InputText>
   </label> 
 ```
 
@@ -131,7 +131,7 @@ function Search () {
 {
   title: "disabled",
   type: "boolean",
-  desc: "Disables of the input.",
+  desc: "Disables the input.",
 },
 ]}/>
 
@@ -158,7 +158,7 @@ function Search () {
 },
 {
   title: "children",
-  type: "React.FC",
+  type: "React.FC  |  React.FC[]",
   desc: "<option> jsx tags with provided \"value\" attr"
 },
 ]}/>
