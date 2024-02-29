@@ -30,13 +30,13 @@ The `<Checkbox/>` component allows to select or deselect options in a form. It p
 ```jsx
 import { Checkbox } from "matro-ui";
 ```
-- `Checkbox`: Checkbox element
+- `Checkbox`: Checkbox input
 {/*  */}
 
  ## Usage
 
  ```jsx live 
-   <Checkbox>Checkbox</Checkbox>
+  <Checkbox>Checkbox</Checkbox>
 ```
 
  ## Disabled Checkbox
@@ -54,7 +54,7 @@ import { Checkbox } from "matro-ui";
 
  ## Checkbox sizes
 
- Pass the <I>font-size</I> to change the size of the Checkbox. Values can be either <I>px</I>, <I>em</I>, <I>rem</I> or <I>%</I>.
+ Pass the <code>font-size</code> to change the size of the Checkbox. Values can be either <code>px</code>, <code>em</code>, <code>rem</code> or <code>%</code>.
 
  ```jsx live 
  <Stack style={{gap: 20, alignItems: "flex-end"}}>
@@ -72,21 +72,50 @@ import { Checkbox } from "matro-ui";
 
  ## Checkbox with custom color
 
- You can override the color scheme of the <I>Checkbox</I> to any color by providing the css variable <I>--bg</I>.
+ You can override the color scheme of the <I>Checkbox</I> to any color by providing the css variable <code>--bg</code>.
 
  ```jsx live 
  <Stack style={{gap: 20, alignItems: "flex-end"}}>
-  <Checkbox style={{"--bg": "red"}} checked>
-    Checkbox
-  </Checkbox>
-  <Checkbox style={{"--bg": "#48b048"}} checked>
-    Checkbox
-  </Checkbox>
-  <Checkbox style={{"--bg": "#4848d7"}} checked>
-    Checkbox
-  </Checkbox>
-  </Stack>
+    <Checkbox style={{"--bg": "red"}} checked>
+      Checkbox
+    </Checkbox>
+    <Checkbox style={{"--bg": "#48b048"}} checked>
+      Checkbox
+    </Checkbox>
+    <Checkbox style={{"--bg": "#4848d7"}} checked>
+      Checkbox
+    </Checkbox>
+ </Stack>
 ```
+
+ ## Checkbox as toggle
+
+ Pass the <code>toggle</code> prop to change the view of the Checkbox.
+
+ ```jsx live 
+ <Stack style={{gap: 20, alignItems: "flex-end"}}>
+    <Checkbox style={{fontSize: "14px"}} checked toggle>
+      Checkbox
+    </Checkbox>
+    <Checkbox style={{fontSize: "16px"}} checked toggle>
+      Checkbox
+    </Checkbox>
+    <Checkbox style={{fontSize: "1.2rem", "--bg": "#48b048"}} checked toggle>
+      Checkbox
+    </Checkbox>
+ </Stack>
+```
+
+ ## Toggle Component
+
+ Alternatively, you can use the <code>`<Toggle/>`</code> component. It wraps <code>Checkbox</code> and pass all props to it.
+
+ ```jsx live 
+  <Toggle style={{fontSize: "1.1rem"}} checked toggle>
+    Toggle
+  </Toggle>
+```
+
 
 
   </TabItem>
