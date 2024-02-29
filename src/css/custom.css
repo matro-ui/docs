@@ -14,15 +14,16 @@
   --ifm-color-primary-lighter: #513599;
   --ifm-color-primary-lightest: #513cad;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 1);
   --ifm-footer-background-color: white;
-  --ifm-navbar-dropdown-border-color: rgb(217, 222, 228);
+  --ifm-navbar-dropdown-border-color: rgb(231 236 241);
   --ed-border-color: #e6ecf0;
   --ifm-toc-border-color: #e9eff1;
   --ifm-menu-color: var(--ifm-color-emphasis-900);
   --ifm-navbar-padding-horizontal: 0.5rem;
   --ifm-hover-overlay: #f2f4ff;
   --ifme-codeblock-bg: rgb(40, 42, 54);
+  --mdx-tabs-border: rgb(235 236 247);
   font-size: 15px;
 }
 
@@ -46,6 +47,7 @@
   --ifm-navbar-dropdown-border-color: rgb(65, 65, 65);
   --ed-border-color: #2b2b2d;
   --ifm-toc-border-color: #2d3035;
+  --mdx-tabs-border: rgb(38 38 39);
 }
 
 h2 {
