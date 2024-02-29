@@ -1,0 +1,152 @@
+---
+sidebar_position: 1
+title: <Radio/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import { Radio } from "matro-ui";
+import { highlightLines } from '../../../assets/tools';
+
+# Radio Input
+
+The `<Radio/>` component allows to select or deselect options in a form. It provides a customizable checkbox input with various options.
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/inputs/Radio"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="radio"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Radio, RadioGroup } from "matro-ui";
+```
+- `RadioGroup`: The wrapper that provides context and logic to the components.
+- `Radio`: The <I>radio</I> input itself.
+{/*  */}
+
+ ## Usage
+
+ ```jsx live 
+  <RadioGroup defaultValue="2">
+    <Radio value="1">Value 1</Radio>
+    <Radio value="2">Value 2</Radio>
+  </Radio>
+```
+
+ ## Disabled Radio
+
+ Pass the <code>disabled</code> prop to disable any radio option.
+
+
+ ```jsx live 
+  <RadioGroup defaultValue="2">
+    <Radio value="1" disabled>Value 1</Radio>
+    <Radio value="2" disabled>Value 2</Radio>
+    <Radio value="3">Value 3</Radio>
+  </Radio>
+```
+
+ ## Radio sizes
+
+ Pass the <code>font-size</code> to change the size of the Radio. Values can be either <code>px</code>, <code>em</code>, <code>rem</code> or <code>%</code>.
+
+
+ ```jsx live 
+  <RadioGroup defaultValue="2" style={{fontSize: "21px"}}>
+    <Radio value="1" style={{fontSize: "0.7em"}}>Value 1</Radio>
+    <Radio value="2">Value 2</Radio>
+    <Radio value="3">Value 3</Radio>
+  </Radio>
+```
+
+ ## Radio with custom color
+
+ You can override the color scheme of the <I>radio</I> to any color by providing the css variable <code>--bg</code> to <I>RadioGroup</I> or <I>Radio</I>.
+
+{highlightLines([1])}
+ ```jsx live 
+  <RadioGroup defaultValue="2" style={{"--bg": "purple"}}>
+    <Radio value="1">Value 1</Radio>
+    <Radio value="2" style={{"--bg": "#48b048"}}>Value 2</Radio>
+    <Radio value="3" style={{"--bg": "#4848d7"}}>Value 3</Radio>
+  </RadioGroup>
+```
+  </TabItem>
+
+
+ <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+
+<PropsBlock 
+title={<div>Props of <code>{`<RadioGroup/>`}</code>:</div>} 
+
+payload={[
+{
+  title: "defaultValue",
+  type: "boolean",
+  desc: "The defauilt value of the group."
+},
+{
+  title: "onChange",
+  type: "function",
+  desc: "Callback function triggered when the input value changes.",
+},
+{
+  title: "name",
+  type: "string",
+  desc: "The name attribute of the input.",
+},
+{
+  title: "style",
+  type: "object",
+  desc: "Additional styling prop.",
+},
+{
+  title: "children",
+  type: "React.FC | React.FC[] | string | number",
+  desc: "Any possible React Children. At least one <Group/> is required."
+},
+]}/>
+
+
+
+<PropsBlock title={<div>Props of <code>{`<Radio/>`}</code>:</div>} payload={[
+{
+  title: "value",
+  type: "string | number",
+  desc: "Radio input value."
+},
+{
+  title: "style",
+  type: "object",
+  desc: "Additional styling prop.",
+},
+{
+  title: "disabled",
+  type: "boolean",
+  desc: "Disables the input.",
+},
+{
+  title: "children",
+  type: "string",
+  desc: "Label of the radio input.",
+},
+]}/>
+  </TabItem>
+
+
+
+
+
+</Tabs>
+</div>
