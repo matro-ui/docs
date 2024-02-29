@@ -1,0 +1,123 @@
+---
+sidebar_position: 1
+title: <Select/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import { highlightLines } from '../../../assets/tools';
+
+# Select Input
+
+The `<Select/>` component allows to select or deselect options in a form. It provides a customizable checkbox input with various options.
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/inputs/Select"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="select"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Select, SelectGroup } from "matro-ui";
+```
+- `SelectGroup`: The wrapper that provides context and logic to the components.
+- `Select`: The <I>select</I> input itself.
+{/*  */}
+
+ ## Usage
+
+ ```jsx live
+    <SelectGroup defaultValue="_">
+      <Select value="_" disabled>Select Value</Select>
+      <Select value="2">2</Select>
+      <Select value="3">3</Select>
+    </SelectGroup>
+```
+
+ ## Prop fitContent
+
+ Pass the <code>fitContent</code> prop to set width value to: <I>fit-content</I>.
+
+{highlightLines([1])}
+ ```jsx live 
+    <SelectGroup defaultValue="_" fitContent>
+      <Select value="_" disabled>Select Value</Select>
+      <Select value="2">2</Select>
+      <Select value="3">3</Select>
+    </SelectGroup>
+```
+
+  </TabItem>
+
+
+ <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+
+<PropsBlock 
+title={<div>Props of <code>{`<SelectGroup/>`}</code>:</div>} 
+
+payload={[
+{
+  title: "defaultValue",
+  type: "boolean",
+  desc: "The defauilt value of the group."
+},
+{
+  title: "onChange",
+  type: "function",
+  desc: "Callback function triggered when the input value changes.",
+},
+{
+  title: "name",
+  type: "string",
+  desc: "The name attribute of the input.",
+},
+{
+  title: "style",
+  type: "object",
+  desc: "Additional styling prop.",
+},
+{
+  title: "children",
+  type: "React.FC | React.FC[] | string | number",
+  desc: "Any possible React Children. At least one <Select/> is required."
+},
+{
+  title: "fitContent",
+  type: "boolean",
+  desc: "Set width to fit-content if true."
+},
+
+]}/>
+
+
+
+<PropsBlock title={<div>Props of <code>{`<Select/>`}</code>:</div>} payload={[
+{
+  title: "value",
+  type: "string | number",
+  desc: "Select option value."
+},
+{
+  title: "disabled",
+  type: "boolean",
+  desc: "Disables of the select option.",
+},
+]}/>
+  </TabItem>
+
+
+
+
+
+</Tabs>
+</div>
