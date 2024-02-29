@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import {useThemeConfig, usePrismTheme} from '@docusaurus/theme-common';
+import { useThemeConfig, usePrismTheme } from '@docusaurus/theme-common';
 import {
   parseCodeBlockTitle,
   parseLanguage,
@@ -8,7 +8,7 @@ import {
   containsLineNumbers,
   useCodeWordWrap,
 } from '@docusaurus/theme-common/internal';
-import {Highlight} from 'prism-react-renderer';
+import { Highlight } from 'prism-react-renderer';
 import Line from '@theme/CodeBlock/Line';
 import CopyButton from '@theme/CodeBlock/CopyButton';
 import WordWrapButton from '@theme/CodeBlock/WordWrapButton';
@@ -29,7 +29,7 @@ export default function CodeBlockString({
   language: languageProp,
 }) {
   const {
-    prism: {defaultLanguage, magicComments},
+    prism: { defaultLanguage, magicComments },
   } = useThemeConfig();
   const language = normalizeLanguage(
     languageProp ?? parseLanguage(blockClassName) ?? defaultLanguage,
@@ -40,11 +40,14 @@ export default function CodeBlockString({
   // future. Note that MDX doesn't strip quotes when parsing metastring:
   // "title=\"xyz\"" => title: "\"xyz\""
   const title = parseCodeBlockTitle(metastring) || titleProp;
-  const {lineClassNames, code} = parseLines(children, {
+
+  const { lineClassNames, code } = parseLines(children, {
     metastring,
     language,
     magicComments,
   });
+
+
   const showLineNumbers =
     showLineNumbersProp ?? containsLineNumbers(metastring);
   return (
@@ -53,13 +56,13 @@ export default function CodeBlockString({
       className={clsx(
         blockClassName,
         language &&
-          !blockClassName.includes(`language-${language}`) &&
-          `language-${language}`,
+        !blockClassName.includes(`language-${language}`) &&
+        `language-${language}`,
       )}>
       {title && <div className={styles.codeBlockTitle}>{title}</div>}
       <div className={styles.codeBlockContent}>
         <Highlight theme={prismTheme} code={code} language={language ?? 'text'}>
-          {({className, style, tokens, getLineProps, getTokenProps}) => (
+          {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre
               /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
               tabIndex={0}
