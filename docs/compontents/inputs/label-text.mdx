@@ -1,0 +1,95 @@
+---
+sidebar_position: 1
+title: <LabelText/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import { highlightLines } from '../../../assets/tools';
+
+# Text Label
+
+The `<LabelText/>` component allows to provide a label text to any field, input, select or textarea.
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/inputs/LabelText"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="labeltext"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { LabelText } from "matro-ui";
+```
+
+ ## Usage
+
+ ```jsx live 
+  <LabelText>Label</LabelText>
+```
+
+ ## With InputText
+
+{highlightLines([2])}
+ ```jsx live 
+  <label>
+    <LabelText>Your email:</LabelText>
+
+    <InputText placeholder="john@example.com">
+      <InputTextField/>
+    </InputText>
+  </label>
+```
+
+ ## InputText & SVG Icon
+
+
+{highlightLines([4,5,6])}
+ ```jsx live 
+//  import { IoMailUnreadOutline } from "react-icons/io5";
+
+<label>
+  <LabelText>
+    <IoMailUnreadOutline/> <span>Your email:</span>
+  </LabelText>
+
+  <InputText placeholder="john@example.com">
+    <InputTextField/>
+  </InputText>
+</label>
+```
+
+  </TabItem>
+
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+
+<PropsBlock 
+title="Props:"
+payload={[
+{
+  title: "children",
+  type: "React.FC | React.FC[] | string",
+  desc: "Label content"
+},
+]}/>
+
+
+</TabItem>
+
+
+
+
+
+
+</Tabs>
+</div>
