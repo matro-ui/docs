@@ -1,0 +1,347 @@
+---
+sidebar_position: 1
+title: <Stack/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import { highlightLines } from '../../../assets/tools';
+
+# Stack
+
+The `<Stack/>` is a layout component that allows to group components together and create a space between them.
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/layout/Stack"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="stack"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Stack } from "matro-ui";
+```
+- `Stack`: The <I>stack</I> layout component itself.
+{/*  */}
+
+ ## Usage
+
+ Here's simple exaple of `<Stack/>` component with <I>gap</I> 10px:
+
+{highlightLines([1])}
+ ```jsx live 
+  <Stack gap="10">
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+```
+
+## Direction
+
+If you want to use column dimension, simply add <I>column</I> prop:
+
+{highlightLines([1])}
+ ```jsx live 
+  <Stack column>
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+```
+
+## Flex
+By default, `<Stack/>` items has width set to <I>fit-content</I>. If you want to change it, add <I>flex</I> prop:
+
+{highlightLines([1])}
+ ```jsx live 
+  <Stack flex>
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+```
+<br/>
+
+:::tip
+
+Alternatively, you can use combined <I>flex</I> property (will be passed to children):
+
+:::
+
+{highlightLines([1])}
+ ```jsx live 
+  <Stack flex="0 1 150px">
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+```
+
+## Wrap
+
+By default, `<Stack/>` items is not wrap when overfow of parent is happen. To change that behaviour, simply add <I>wrap</I> prop:
+
+{highlightLines([1])}
+ ```jsx live 
+  <Stack flex="1 1 300px" gap="2" wrap>
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+    <div className="example">4</div>
+    <div className="example">5</div>
+  </Stack>
+```
+
+
+## Justify & Align
+
+`<Stack/>` has two axis - main and cross (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox#the_main_axis" target="_blank">MDN: learn more</a>). 
+To align items by the <i>main axis</i> <br/> use <I>justify</I> prop (val: `start`, `end`, `center`, `spaceBetween`, `spaceAround`):
+
+### Justify by main axis:
+
+{highlightLines([3, 9, 15, 21, 27])}
+ ```jsx live 
+<div className="small">
+  <LabelText>justify="start" (default)</LabelText>
+  <Stack>
+    <div className="example">1</div>
+    <div className="example">2</div>
+  </Stack>
+
+ <LabelText>justify="end"</LabelText>
+  <Stack justify="end">
+    <div className="example">1</div>
+    <div className="example">2</div>
+  </Stack>
+
+  <LabelText>justify="center"</LabelText>
+  <Stack justify="center">
+    <div className="example">1</div>
+    <div className="example">2</div>
+  </Stack>
+
+  <LabelText>justify="spaceBetween"</LabelText>
+  <Stack justify="spaceBetween">
+    <div className="example">1</div>
+    <div className="example">2</div>
+  </Stack>
+
+  <LabelText>justify="spaceAround"</LabelText>
+  <Stack justify="spaceAround">
+    <div className="example">1</div>
+    <div className="example">2</div>
+  </Stack>
+</div>
+```
+
+<br/>
+### Align by cross axis, using <I>align</I> prop (val: `start`, `end`, `center`, `stretch`):
+
+{highlightLines([3, 10, 17, 24])}
+ ```jsx live 
+<div className="small align-example">
+
+  <LabelText>align="start" (default)</LabelText>
+  <Stack>
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+
+  <LabelText>align="stretch" </LabelText>
+  <Stack align="stretch">
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+
+ <LabelText>align="end"</LabelText>
+  <Stack align="end">
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+
+  <LabelText>align="center"</LabelText>
+  <Stack align="center">
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+
+</div>
+```
+
+
+## Advanced examples
+
+:::info
+
+Here's more advanced examples of how `<Stack/>` can be used:
+
+:::
+
+{highlightLines([4])}
+ ```jsx live 
+<div className="small align-example">
+  <LabelText>row with stretch, flex 1</LabelText>
+
+  <Stack flex align="stretch">
+    <div className="example">1</div>
+    <div className="example">2</div>
+  </Stack>
+</div>
+```
+
+{highlightLines([4])}
+```jsx live 
+<div className="small align-example">
+  <LabelText>flex 0, align end, justify end</LabelText>
+
+  <Stack align="end" justify="end">
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+</div>
+```
+
+{highlightLines([5])}
+```jsx live 
+<div className="small align-example">
+  <LabelText>
+    align center, justify center, flexGrow 0 flexShrink 0, base 200px</LabelText>
+
+  <Stack flex="0 0 100px" align="center" justify="center">
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+</div>
+  ```
+
+{highlightLines([5])}
+```jsx live 
+<div className="small align-example">
+  <LabelText>
+    align stretch, justify center, flexGrow 0 flexShrink 0, base 200px</LabelText>
+
+  <Stack flex="0 0 100px" align="stretch" justify="center">
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+</div>
+```
+
+{highlightLines([6,7,8,9])}
+```jsx live 
+<div className="small align-example">
+  <LabelText>
+   column align center, justify center, flexGrow 0 flexShrink 0, 
+   minWidth 100px base 50px (in column base sets minHeight)</LabelText>
+
+  <Stack column flex="0 0 50px" align="center" justify="center">
+    <div className="example" style={{minWidth: 100}}>1</div>
+    <div className="example" style={{minWidth: 100}}>2</div>
+    <div className="example" style={{minWidth: 100}}>3</div>
+  </Stack>
+</div>
+```
+
+{highlightLines([7,8,9,10,11,12])}
+```jsx live 
+<div className="small align-example">
+  <LabelText>
+   column align stretch, justify center, flexGrow 0 flexShrink 0, 
+   base 60px padding 20px gap 10px</LabelText>
+
+  <Stack 
+    column 
+    flex="0 0 60px" 
+    align="stretch" 
+    justify="center" 
+    padding="20" 
+    gap="10"
+  >
+    <div className="example">1</div>
+    <div className="example">2</div>
+    <div className="example">3</div>
+  </Stack>
+</div>
+  ```
+  </TabItem>
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+## Props
+
+<PropsBlock payload={[
+{
+  title: "children",
+  type: "any",
+  desc: "The children/s of the Stack."
+},
+{
+  title: "wrap",
+  type: "boolean",
+  desc: "Indicates whether the Stack has to wrap the overflow items / or shrink the existing ones.",
+},
+{
+  title: "column",
+  type: "boolean",
+  desc: "Set Stack direction to column if true.",
+  def: "bool:false"
+},
+{
+  title: "justify",
+  type: '"start" | "end" | "center" | "spaceBetween" | "spaceAround"',
+  desc: "Set Stack items justify option.",
+  def: '"start"'
+},
+{
+  title: "align",
+  type: '"start" | "end" | "center" | "stretch"',
+  desc: "Set Stack items align option.",
+  def: '"start"'
+},
+{
+  title: "padding",
+  type: 'string | number',
+  desc: "Set Stack padding (inner spacing)",
+},
+{
+  title: "margin",
+  type: 'string | number',
+  desc: "Set Stack margin (outside spacing)",
+},
+{
+  title: "gap",
+  type: 'string | number',
+  desc: "Stack items gap (spacing between items)",
+  def: "5px"
+},
+
+]}/>
+
+  </TabItem>
+
+
+
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
+
+
+
+</Tabs>
+</div>
