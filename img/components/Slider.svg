@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324.66 208.78"><rect x="60.12" y="106.19" width="222.33" height="5" rx="2.5" ry="2.5" style="fill:#cdcde0;"/><rect x="60.12" y="106.19" width="98.46" height="5" rx="2.5" ry="2.5" style="fill:#aba6e0;"/><circle cx="158.58" cy="108.69" r="7.43" style="fill:#fff;"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="a" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 324.7 208.8" style="enable-background:new 0 0 324.7 208.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#DDDDED;}
+	.st1{fill:#8E85FF;}
+	.st2{fill:#FFFFFF;stroke:#C1C1DB;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M53.7,110.4H271c1.4,0,3.5,1.8,3.5,4l0,0c0,2.2-2.1,4-3.5,4H53.7c-1.4,0-3.5-1.8-3.5-4l0,0
+	C50.2,112.2,52.3,110.4,53.7,110.4z"/>
+<path class="st1" d="M53.7,110.4h93.5c1.4,0,2.5,1.8,2.5,4l0,0c0,2.2-1.1,4-2.5,4H53.7c-1.4,0-3.5-1.8-3.5-4l0,0
+	C50.2,112.2,52.3,110.4,53.7,110.4z"/>
+<circle class="st2" cx="149.6" cy="114.4" r="12.2"/>
+</svg>
