@@ -4,8 +4,14 @@
   padding: 0.4em 0.6em;
   margin: -1px 0.2em 0.3rem 0;
   background-color: rgb(48 55 73);
-  color: #c2c7ea;
+  background-color: #e8eaff;
+  color: #4d55b1;
   border-radius: 0.2em;
+}
+
+[data-theme="dark"] .title {
+  background-color: rgb(48 55 73);
+  color: #c2c7ea;
 }
 
 .content {
@@ -13,7 +19,7 @@
   border-top: 1px solid var(--ifm-navbar-dropdown-border-color);
 }
 
-.content div {
+.content>div {
   display: flex;
 }
 
@@ -25,7 +31,21 @@
   flex: 0 0 25%
 }
 
+.content code {
+  padding: 0.3em;
+  margin: 0 0.2em;
+}
+
 .act_color {
   font-size: 0.9em;
   color: var(--ifm-breadcrumb-color-active);
+}
+
+h2 code {
+  display: inline-block;
+  padding: 0.1em;
+  font: inherit;
+  font-size: 0.8em;
+  letter-spacing: 0.02em;
+  transform: translateY(-0.1em);
 }
