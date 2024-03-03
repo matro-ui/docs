@@ -79,7 +79,7 @@ import { Checkbox } from "matro-ui";
     <Checkbox style={{"--bg": "red"}} checked>
       Checkbox
     </Checkbox>
-    <Checkbox style={{"--bg": "#48b048"}} checked>
+    <Checkbox style={{"--bg": "#48b07d"}} checked>
       Checkbox
     </Checkbox>
     <Checkbox style={{"--bg": "#4848d7"}} checked>
@@ -100,7 +100,7 @@ import { Checkbox } from "matro-ui";
     <Checkbox style={{fontSize: "16px"}} checked toggle>
       Checkbox
     </Checkbox>
-    <Checkbox style={{fontSize: "1.2rem", "--bg": "#48b048"}} checked toggle>
+    <Checkbox style={{fontSize: "1.2rem", "--bg": "#48b07d"}} checked toggle>
       Checkbox
     </Checkbox>
  </Stack>
@@ -125,6 +125,11 @@ import { Checkbox } from "matro-ui";
 ## Props
 
 <PropsBlock payload={[
+  {
+  title: "name",
+  type: "string",
+  desc: "The name attribute of the checkbox.",
+},
 {
   title: "value",
   type: "boolean",
@@ -136,11 +141,6 @@ import { Checkbox } from "matro-ui";
   desc: "Callback function triggered when the checkbox value changes.",
 },
 {
-  title: "name",
-  type: "string",
-  desc: "The name attribute of the checkbox.",
-},
-{
   title: "checked",
   type: "boolean",
   desc: "Indicates whether the checkbox is checked.",
@@ -148,12 +148,12 @@ import { Checkbox } from "matro-ui";
 {
   title: "toggle",
   type: "boolean",
-  desc: "Indicates whether the checkbox is in toggle mode.",
+  desc: "Changes checkbox view to toggle if true.",
 },
 {
   title: "linear",
   type: "boolean",
-  desc: "Indicates whether the checkbox has a linear type of animation.",
+  desc: "Sets linear type of animation if true.",
 },
 
 ]}/>
