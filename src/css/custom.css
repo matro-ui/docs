@@ -7,6 +7,9 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #7b5dc9;
+  --ifm-color-primary: #715dc9;
+  --ifm-color-primary: #745dc9;
+
   --ifm-color-primary-dark: #432978;
   --ifm-color-primary-darker: #452771;
   --ifm-color-primary-darkest: #39205d;
@@ -22,6 +25,9 @@
   --ifm-menu-color: var(--ifm-color-emphasis-900);
   --ifm-navbar-padding-horizontal: 0.5rem;
   --ifm-hover-overlay: #f2f4ff;
+  --ifm-hover-overlay: #f2f2ff;
+
+
   --ifme-codeblock-bg: rgb(40, 42, 54);
   --mdx-tabs-border: rgb(235 236 247);
   font-size: 15px;
@@ -36,6 +42,10 @@
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #b698ff;
+  --ifm-color-primary: #9589ff;
+  --ifm-color-primary: #a189ff;
+
+
   --ifm-color-primary-dark: #5721af;
   --ifm-color-primary-darker: #471fa5;
   --ifm-color-primary-darkest: #3b1a88;
@@ -286,7 +296,12 @@ ul ul .menu__link--sublist-caret:after {
 }
 
 .navbar-sidebar__item.menu>ul>li a {
-  min-height: 40px;
+  min-height: 30px;
+}
+
+.navbar-sidebar__item.menu>ul>li>div>a,
+.navbar-sidebar__item.menu>ul>li>a {
+  min-height: 50px;
 }
 
 .breadcrumbs {
@@ -419,8 +434,43 @@ body .navbar__search {
 }
 
 
-
 .navbar__search kbd {
+  --border-color: #c9ced5;
+  --border-color: #c9ced5;
+  --shadow-color: #c9ced5;
+  --shadow-color-2: #ffffff;
+  --background: #ebedf0;
+  --text: #bec3c9;
+  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.6rem;
+  height: 1.32rem;
+  padding: 0 0.2rem;
+  font: inherit;
+  font-weight: 500;
+  font-size: 0.92rem;
+  line-height: 100%;
+
+
+
+  color: var(--text);
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  box-shadow: 0px 2px 0 0 var(--shadow-color), 0 2px 2px 1px var(--shadow-color-2);
+}
+
+[data-theme="dark"] .navbar__search kbd {
+  --border-color: #81858c;
+  --shadow-color: #3f4349;
+  --shadow-color-2: #000000;
+  --background: #444950;
+  --text: #BEC3C9;
+}
+
+
+
+/* .navbar__search kbd {
   --border-color: #c9ced5;
   display: flex;
   align-items: center;
@@ -434,7 +484,7 @@ body .navbar__search {
   border-color: var(--border-color);
   box-shadow: 0px 2px 0 0 var(--border-color);
   border-bottom: 1px solid var(--border-color);
-}
+} */
 
 .navbar__search kbd:nth-child(1) {
   font-size: 1.08em;
@@ -452,8 +502,8 @@ body .searchHintContainer_node_modules-\@easyops-cn-docusaurus-search-local-dist
 }
 
 code {
-  background-color: #dfe6ff;
-  color: #3e4293;
+  background-color: #e8eaff;
+  color: #4d55b1;
   border: none;
   border-radius: 0.2em;
   font-family: var(--ifm-font-family-monospace);
@@ -542,4 +592,164 @@ div.small .mtui-stack {
   min-width: 5rem;
   height: auto;
   min-height: 5rem;
+}
+
+.theme-doc-markdown a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+  text-decoration-color: #d1beff;
+}
+
+.theme-doc-markdown a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.2em;
+  text-decoration-color: #d7c6fe;
+}
+
+[data-theme="dark"] .theme-doc-markdown a {
+  text-decoration-color: #52476f;
+}
+
+[data-theme="dark"] .theme-doc-markdown a:hover {
+  text-decoration-color: #594d78;
+}
+
+@media only screen and (max-width: 996px) {
+
+  .navbar-sidebar .menu__list div.menu__list-item,
+  .navbar-sidebar .menu__list div.menu__list-item a {
+    width: 100%;
+    height: 52px;
+    border-radius: 0;
+  }
+
+  .navbar-sidebar .menu__list div.menu__list-item a {
+    margin-top: 0.2rem;
+
+  }
+
+  .navbar-sidebar .menu__list div.menu__list-item a span {
+    position: static;
+    height: 32px;
+    width: 32px;
+    margin: 10px;
+  }
+
+  .navbar-sidebar .menu__list div.menu__list-item a::after {
+    content: "Github";
+    display: inline-block;
+    font: inherit;
+    font-size: 1rem;
+    line-height: 52px;
+    color: var(--ifm-menu-color, #000);
+    text-decoration: none;
+  }
+
+  .navbar-sidebar .menu__list div.menu__list-item a:hover {
+    text-decoration: none;
+    background-color: var(--ifm-menu-color-background-hover);
+  }
+
+}
+
+@media only screen and (max-width: 577px) {
+  :root {
+    font-size: 16px;
+  }
+
+  .navbar__search-input {
+    height: 46px;
+    background: #fff;
+  }
+
+  .navbar__search-input button {
+    background-color: red;
+  }
+
+  [data-theme="dark"] .navbar__search-input {
+    background-color: #121213;
+  }
+
+  .navbar__search::before {
+    width: 22px;
+    height: 22px;
+    top: calc(50% - 11px);
+    left: 11px;
+  }
+
+  body .navbar__search button {
+    width: 52px !important;
+    height: 52px !important;
+    top: 50% !important;
+    right: 0 !important;
+    font-size: 2rem !important;
+    z-index: 1000 !important;
+  }
+
+  body .navbar__search-input:not(:focus) {
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .navbar__search-input {
+    width: 95vw;
+    height: 52px;
+    width: calc(100vw - 14px);
+    margin: 0;
+    font-size: 1.1rem;
+    padding: 0px 0.5rem 0px 2.4rem;
+  }
+
+  body .navbar__search-input:focus+pre {
+    position: fixed !important;
+    visibility: visible !important;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.161);
+    backdrop-filter: blur(30px);
+    opacity: 1;
+    z-index: -2;
+    border-radius: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .navbar-sidebar {
+    font-size: 1.16rem;
+  }
+
+  .navbar-sidebar__back {
+    height: 44px;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+
+  :root {
+    font-size: 17px;
+  }
+
+  h2 {
+    margin: 1em 0 0.6em;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  :root {
+    font-size: 14px;
+  }
 }
