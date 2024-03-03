@@ -3,13 +3,12 @@
 <svg version="1.1" id="a" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 324.7 208.8" style="enable-background:new 0 0 324.7 208.8;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#DDDDED;}
+	.st0{fill:#FFFFFF;stroke:#DDDDED;stroke-miterlimit:10;}
 	.st1{fill:#8E85FF;}
 	.st2{fill:#FFFFFF;stroke:#C1C1DB;stroke-miterlimit:10;}
 </style>
-<path class="st0" d="M53.7,110.4H271c1.4,0,3.5,1.8,3.5,4l0,0c0,2.2-2.1,4-3.5,4H53.7c-1.4,0-3.5-1.8-3.5-4l0,0
-	C50.2,112.2,52.3,110.4,53.7,110.4z"/>
-<path class="st1" d="M53.7,110.4h93.5c1.4,0,2.5,1.8,2.5,4l0,0c0,2.2-1.1,4-2.5,4H53.7c-1.4,0-3.5-1.8-3.5-4l0,0
-	C50.2,112.2,52.3,110.4,53.7,110.4z"/>
-<circle class="st2" cx="149.6" cy="114.4" r="12.2"/>
+<path class="st0" d="M292.7,110.5H37.8c-2.2,0-4-1.8-4-4v0c0-2.2,1.8-4,4-4h254.9c2.2,0,4,1.8,4,4v0
+	C296.7,108.7,294.9,110.5,292.7,110.5z"/>
+<path class="st1" d="M179.8,110.5H38.9c-2.8,0-5.1-1.8-5.1-4v0c0-2.2,2.3-4,5.1-4h140.9V110.5z"/>
+<circle class="st2" cx="181.8" cy="106.5" r="12.2"/>
 </svg>
