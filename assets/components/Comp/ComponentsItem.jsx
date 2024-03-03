@@ -11,7 +11,7 @@ const defaultProps = {
 }
 
 const ComponentsItem = (props = defaultProps) => {
-  const { img, title, url } = { ...defaultProps, ...props };
+  const { img, title, url, item } = { ...defaultProps, ...props };
   const history = useHistory();
 
   const onNavigate = () => {
@@ -21,7 +21,8 @@ const ComponentsItem = (props = defaultProps) => {
   return (
     <article className={s.item} onClick={onNavigate}>
       <div className={s.imgartv}>
-        <Image src={img} alt={title} />
+        {img && <img src={img} alt={title} onError={(e) => e.target.style.opacity = 0} />}
+        {item ? <>{item}</> : ""}
       </div>
       <Link href={url}>
         <p className={s.title}><span>{title}</span></p>

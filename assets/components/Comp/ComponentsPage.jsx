@@ -7,9 +7,8 @@ import data from "../../data/components"
 
 
 const ComponentsPage = () => {
-
   const filteredData = data;
-  console.log(Object.keys(filteredData));
+
   return (
     <div>
       <SearchInput />
