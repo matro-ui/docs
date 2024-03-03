@@ -109,7 +109,7 @@ const config = {
           },
 
           // { type: "docsVersionDropdown", position: 'right' },
-          { type: "localeDropdown", position: 'right' },
+          // { type: "localeDropdown", position: 'right' },
           // { type: "version", position: 'right' },
           {
             type: 'html',
