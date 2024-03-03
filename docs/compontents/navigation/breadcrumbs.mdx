@@ -1,0 +1,155 @@
+---
+sidebar_position: 1
+title: <Breadcrumbs/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import {Breadcrumbs} from "matro-ui";
+import { highlightLines } from '../../../assets/tools';
+
+# Breadcrumbs
+
+The `<Breadcrumbs/>` component render breadcrumbs that show the user where they are in the site's hierarchy. 
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/navigation/Breadcrumbs"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="breadcrumbs"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Breadcrumbs, BreadcrumbsItem } from "matro-ui";
+```
+- `Breadcrumbs`: The wrapper that provides context and logic to the components
+- `BreadcrumbsItem`: The <I>Breadcrumbs</I> item
+{/*  */}
+
+ ## Usage
+
+ ```jsx live 
+<Breadcrumbs divider="🚀">
+    <BreadcrumbsItem>
+      <Link to="#">Home</Link>
+    </BreadcrumbsItem>
+
+    <BreadcrumbsItem>
+      <Link to="#">Products</Link>
+    </BreadcrumbsItem>
+
+    <BreadcrumbsItem>
+      <Link to="#">Course 1</Link>
+    </BreadcrumbsItem>
+</Breadcrumbs>
+```
+
+## Show last Divider
+
+By default, `<Breadcrumbs/>` last divider is hidden. To change this behaviour, simply add <I>showLastDivider</I> prop:
+
+{highlightLines([1])}
+ ```jsx live 
+<Breadcrumbs divider="👉" showLastDivider>
+  {["Link1", "Link2", "Link3"].map(link => 
+    <BreadcrumbsItem key={uuid()}>
+      <Link to={`/${link}`}>{link}</Link>
+    </BreadcrumbsItem>
+  )}
+</Breadcrumbs>
+```
+
+
+ ## Last Active
+
+ By default, `<Breadcrumbs/>` last item is inactive. To change this behaviour, simply add <I>lastActive</I> prop:
+
+{highlightLines([1])}
+ ```jsx live 
+<Breadcrumbs lastActive>
+    <BreadcrumbsItem>
+      <Link to="#">Link 1</Link>
+    </BreadcrumbsItem>
+
+    <BreadcrumbsItem>
+      <Link to="#">Link 2</Link>
+    </BreadcrumbsItem>
+</Breadcrumbs>
+```
+
+ ## Custom Divider
+
+`<Breadcrumbs/>` default divider is `"/"`. To change it set <I>divider</I> prop (val: <I>any</I>):
+
+{highlightLines([3])}
+ ```jsx live 
+//  import { IoIosArrowForward } from "react-icons/io";
+
+<Breadcrumbs divider={<IoIosArrowForward />}>
+  {["Link1", "Link2", "Link3"].map(link => 
+    <BreadcrumbsItem key={uuid()}>
+      <Link to={`/${link}`}>{link}</Link>
+    </BreadcrumbsItem>
+  )}
+</Breadcrumbs>
+```
+
+
+  </TabItem>
+
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+    <PropsBlock title={<div>Props of <code>{`<BreadcrumbsItem/>`}</code>:</div>} payload={[
+    {
+      title: "children",
+      type: "React.FC | React.FC[] | string | number",
+    }
+    ]}/>
+
+    <PropsBlock title={<div>Props of <code>{`<Breadcrumbs/>`}</code>:</div>} payload={[
+    {
+      title: "children",
+      type: "React.FC | React.FC[] | string | number",
+      desc: <div>Any possible React Children. At least one <code>{`<BreadcrumbsItem/>`}</code> is required.</div>,
+    },
+    {
+      title: "divider",
+      type: "React.FC | React.FC[] | string | number",
+      desc: "Custom divider.",
+      def: '"/"'
+    },
+    {
+      title: "showLastDivider",
+      type: "boolean",
+      desc: "Shows last divider if set to true.",
+      def: "false"
+    },
+    {
+      title: "lastActive",
+      type: "boolean",
+      desc: <div>Makes last <code>{`<BreadcrumbsItem/>`}</code> accessible.</div>,
+      def: "false"
+    },
+
+    ]}/>
+
+  </TabItem>
+
+
+
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
+
+
+
+</Tabs>
+</div>
