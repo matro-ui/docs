@@ -1,0 +1,103 @@
+---
+sidebar_position: 1
+title: <Progress/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import {Checkbox} from "matro-ui";
+
+# Progress Bar
+
+The `<Progress/>` component allows to select or deselect options in a form. It provides a customizable checkbox input with various options.
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/progress/Progress"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="Progress"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Progress } from "matro-ui";
+```
+- `Progress`: Progress bar component
+{/*  */}
+
+ ## Usage
+
+ ```jsx live 
+<label>
+  <LabelText>Example of {`<Progress/>`}, 10%</LabelText>
+  <Progress value={10} />
+</label>
+```
+
+## Bar Height
+
+To change the height of `<Progress/>`, simply set the `height` prop (val. <I>string</I> | <I>number</I>):
+
+ ```jsx live 
+<label>
+  <LabelText>Example of {`<Progress/>`}, 90%</LabelText>
+  <Progress value={90} height="3" />
+</label>
+```
+
+## Color Scheme
+ 
+
+To change the color of `<Progress/>`, set the `colorScheme` prop (val. <I>"red"</I> | <I>"orange"</I> | <I>"yellow"</I> | <I>"green"</I> | <I>"cyangreen"</I> | <I>"cyanblue"</I> | <I>"blue"</I> | <I>"purple"</I> | <I>"pink"</I>):
+
+ ```jsx live 
+<label>
+  <LabelText>Example of {`<Progress/>`}, 50%</LabelText>
+  <Progress colorScheme="pink" value={50} height="3" />
+</label>
+```
+
+</TabItem>
+
+
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+    <PropsBlock title={<div>Props of <code>{`<Progress/>`}</code>:</div>} payload={[
+    {
+      title: "value",
+      type: "string | number",
+      desc: "Progress in %.",
+    },
+    {
+      title: "height",
+      type: "string | number",
+      desc: <>Height of the <code>{`<Progress/>`}</code>.</>,
+      def: '"5px"'
+    },
+    {
+      title: "colorScheme",
+      type: '"red" | "orange" | "yellow" | "green" | "cyangreen" | "cyanblue" | "blue" | "purple" | "pink"',
+      desc: "Shows last divider if set to true.",
+      def: "--hue: 160"
+    },
+    ]}/>
+
+  </TabItem>
+
+
+
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
+
+
+
+</Tabs>
+</div>
