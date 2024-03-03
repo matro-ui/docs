@@ -1,0 +1,103 @@
+---
+sidebar_position: 2
+title: <LinkButton/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import {Breadcrumbs} from "matro-ui";
+import { highlightLines } from '../../../assets/tools';
+import Link from '@docusaurus/Link';
+
+# Link as button
+
+The `<LinkButton/>` component render link as button that allows to use `<a>` tag without breaking <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element" target="_blank">W3C markup rules</a>.
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/navigation/LinkButton"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="LinkButton"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { LinkButton } from "matro-ui";
+```
+- `LinkButton`: The <I>LinkButton</I> component itself
+{/*  */}
+
+ ## Usage
+
+ ```jsx live 
+  <LinkButton 
+    as={<a href="https://example.com" target="_blank"></a>}
+  >
+   Hi! I'm a Link myself 👋🏾
+  </LinkButton>
+```
+
+ ## react-router-dom
+
+ You can also use it as a wrapper to a <I>react-router-dom</I> `<Link/>`, or other navigation component
+
+ ```jsx live 
+  <LinkButton as={<Link to="#"/>}>
+   LinkButton as {`<Link/>`}
+  </LinkButton>
+```
+
+ ## Icon
+{/*  */}
+<Link to="/docs/compontents/other/button">{`<Button/>`} specification</Link> allows us to add a custom Icon, by simply using `leftIcon` or `rightIcon` prop (val: <I>any</I>):
+
+ ```jsx live 
+  <LinkButton 
+    as={<Link to="#"/>} 
+    leftIcon={<IoLayersOutline color="darkturquoise"/>}
+  >
+    LinkButton as {`<Link/>`}
+  </LinkButton>
+```
+
+
+  </TabItem>
+
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+    ## Props of `<LinkButton/>`:
+    > all from <Link to="/docs/compontents/other/button">{`<Button/>`} spec</Link>, and:
+    <br/>
+    <br/>
+    <PropsBlock title={""} payload={[
+    {
+      title: "children",
+      type: "React.FC | React.FC[] | string | number",
+      desc: <div>Any possible React Children, usually string.</div>,
+    },
+    {
+      title: "as",
+      type: "React.FC | React.FC[] | string | number",
+      desc: "Will be converted to a parent item, with provided props.",
+    },
+    ]}/>
+
+  </TabItem>
+
+
+
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
+
+
+
+</Tabs>
+</div>
