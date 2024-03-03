@@ -1,0 +1,145 @@
+---
+sidebar_position: 1
+title: <Accordion/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import {Breadcrumbs} from "matro-ui";
+import { highlightLines } from '../../../assets/tools';
+
+# Accordion
+
+The `<Accordion/>` component render breadcrumbs that show the user where they are in the site's hierarchy. 
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/other/Accordion"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="accordion"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Accordion, AccordionItem, AccordionButton } from "matro-ui";
+```
+- `Accordion`: The wrapper that provides context and logic to the components
+- `AccordionItem`: Individual accordion element containing a button.
+- `AccordionButton`: The button that toggles show/hide state of the accordion item
+
+{/*  */}
+
+ ## Usage
+
+ ```jsx live 
+<Accordion>
+    <AccordionItem>
+      <AccordionButton>Accordion Item 1</AccordionButton>
+       <i>Content 1</i>
+    </AccordionItem>
+
+    <AccordionItem>
+      <AccordionButton>Accordion Item 2</AccordionButton>
+      <div>Content 2</div>
+    </AccordionItem>
+</Accordion>
+```
+
+ ## Custom Icon
+
+ You can pass the <code>setIcon</code> prop <I>callback</I> to change the default icon and render it conditionaly based on the `props.isOpened` argument.
+
+{highlightLines([1])}
+ ```jsx live 
+<Accordion setIcon={(props) => props.isOpened ? "🚀" : <>😴</>}>
+    <AccordionItem>
+      <AccordionButton>Item #1</AccordionButton>
+      <i>content 1</i>
+    </AccordionItem>
+
+    <AccordionItem>
+      <AccordionButton>Item #2</AccordionButton>
+      <div>content 2</div>
+    </AccordionItem>
+</Accordion>
+```
+
+ ## Opened by default
+
+ To make the `<AccordionItem/>` opened by default, pass the `isOpened` prop to it:
+
+{highlightLines([2])}
+ ```jsx live 
+<Accordion>
+    <AccordionItem isOpened>
+      <AccordionButton>Item #1</AccordionButton>
+      <b>Hi! I'm opened by default! 👋🏿</b>
+    </AccordionItem>
+</Accordion>
+```
+
+  </TabItem>
+
+
+
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+    <PropsBlock title={<div>Props of <code>{`<Accordion/>`}</code>:</div>} payload={[
+    {
+      title: "children",
+      type: "React.FC | React.FC[] | string | number",
+      desc: <div>Any possible React Children. At least one <code>{`<AccordionItem/>`}</code> is required.</div>,
+    },
+    {
+      title: "setIcon",
+      type: "function",
+      desc: <>Callback function that sets custom Icon to each child (<code>{`<AccordionItem/>`}</code>) and recieves <code>props.isOpened</code> to render it conditionally.</>,
+    }
+    ]}/>
+
+    <PropsBlock title={<div>Props of <code>{`<AccordionItem/>`}</code>:</div>} payload={[
+    {
+      title: "children",
+      type: "React.FC | React.FC[] | string | number",
+      desc: <div>Any possible React Children. At least one <code>{`<AccordionButton/>`}</code> is required.</div>,
+    },
+     {
+      title: "setIcon",
+      type: "function",
+      desc: <>Callback function that sets custom Icon and recieves <code>props.isOpened</code> to render it conditionally.</>,
+    },
+    {
+      title: "isOpened",
+      type: "boolean",
+      desc: "Opened by default if set to true.",
+      def: "false"
+    },
+    ]}/>
+
+    <PropsBlock title={<div>Props of <code>{`<AccordionButton/>`}</code>:</div>} payload={[
+    {
+      title: "children",
+      type: "React.FC | React.FC[] | string | number",
+      desc: <div>Any possible React Children.</div>,
+    },
+    ]}/>
+
+  </TabItem>
+
+
+
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
+
+
+
+</Tabs>
+</div>

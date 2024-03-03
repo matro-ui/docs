@@ -1,0 +1,160 @@
+---
+sidebar_position: 1
+title: <Button/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources"
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import { highlightLines } from '../../../assets/tools';
+
+# Button
+
+The `<Button/>` component render breadcrumbs that show the user where they are in the site's hierarchy. 
+
+<Sources
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/other/Button"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="Button"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Button } from "matro-ui";
+```
+- `Button`: Button component itself.
+{/*  */}
+
+ ## Usage
+
+ ```jsx live 
+<Stack>
+  <Button>Button</Button>
+  <Button leftIcon={<IoMailUnreadOutline/>}>Button</Button>
+</Stack>
+```
+
+ ## Styling
+
+ <br/>
+
+ ### Color
+
+ To change the color of the `<Button/>`, simply pass the `hue`(<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hue" target="_blank">MDN Docs</a>) prop to it:
+
+ ```jsx live 
+<Stack>
+    <Button hue="100">Button</Button>
+    <Button hue="200" leftIcon={<IoMailUnreadOutline/>}>Button</Button>
+    <Button hue="240" leftIcon={<Spinner size="XS"/>}>Button</Button>
+</Stack>
+```
+
+<br/>
+
+ ### Glossy
+
+ To make the button "glossy", add the `glossy` prop to it:
+
+ ```jsx live 
+<Stack>
+    <Button colorScheme="black" glossy>Button</Button>
+    <Button leftIcon={<IoMailUnreadOutline/>} hue="160" glossy>Button</Button>
+</Stack>
+```
+
+
+ ## Icon
+
+ To add the Icon to the `<Button/>`, simply pass it to the `leftIcon` or `rightIcon` prop:
+
+{highlightLines([3, 10])}
+ ```jsx live 
+<Stack column>
+    <Button 
+      leftIcon={<PiGear size="21" style={{margin: "0 -1px 0 -1px"}}/>} 
+      hue="260"
+    >
+    User Settings
+    </Button>
+
+    <Button 
+      leftIcon={<PiBluetooth size="20" style={{margin: "0 -3px 0 1px"}}/>}  
+      hue="200"
+    >
+      Bluetooth
+    </Button>
+</Stack>
+```
+
+
+ ## Only Icon button
+
+ If you want to make a <I>Button</I> with only Icon inside, use `isIcon` prop to set it <I>right spacing</I> to 0:
+
+{highlightLines([6])}
+ ```jsx live 
+ //  import { PiGear } from "react-icons/pi";
+
+  <Button
+    leftIcon={<PiGear size="21" style={{margin: "0 -1px 0 -1px"}}/>} 
+    hue="260"
+    isIcon
+  />
+```
+
+
+
+  </TabItem>
+
+
+
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+    <PropsBlock title={<div>Props of <code>{`<Button/>`}</code>:</div>} payload={[
+    {
+      title: "children",
+      type: "React.FC | React.FC[] | string | number",
+      desc: <div>Any possible React Children.</div>,
+    },
+    {
+      title: "leftIcon",
+      type: "React.FC | React.FC[] | string | number",
+      desc: <>Left-side Icon. Any possible React Children. Usually <code>{`<svg/>`}</code> or <code>"string"</code></>
+    },
+    {
+      title: "rightIcon",
+      type: "React.FC | React.FC[] | string | number",
+      desc: <>Right-side Icon. Any possible React Children. Usually <code>{`<svg/>`}</code> or <code>"string"</code></>
+    },
+     {
+      title: "glossy",
+      type: "boolean",
+      desc: "Adds \"glossy\" effect to the button."
+    },
+    {
+      title: "isIcon",
+      type: "boolean",
+      desc: "Sets marginRight of Icon to 0."
+    }
+    ]}/>
+
+  </TabItem>
+
+
+
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
+
+
+
+</Tabs>
+</div>
