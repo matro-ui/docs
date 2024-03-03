@@ -6,6 +6,7 @@ title: Getting Started
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import s from '../src/css/mdx.module.css';
+import Link from '@docusaurus/Link';
 
 
 # Getting Started
@@ -41,11 +42,12 @@ bun add matro-ui
 </Tabs>
 </div>
 
-After installing Matra UI, no further actions are required. By design, we decided not to overload Matra with Context Providers and other "heavy" things. However, this may change in the future.
+
+After installing Matra UI, no further actions are required. Currently, we do not use the Context Provider for custom theme settings. However, this will change in the near future.
 
 ## Step 2: Add your first Component
 
-Here's a quick example of how you can do it using something like Create React App:
+Here's a quick example of how you can do it using something like <a href="https://create-react-app.dev/" target="_blank">Create React App</a>:
 
 ```js
 import React from "react";
@@ -60,6 +62,6 @@ ReactDOM.render(
 
 ## Conclusion
 
-You've successfully installed Matro UI and added your first component to your project. Now, you're ready to dive deeper and explore the full range of components and features Matro UI has to offer. Whether you're building a simple website or a complex web application, Matro UI provides you with the tools you need to create beautiful and functional user interfaces.
+You've successfully installed Matro UI and added your first component to your project. Now, you're ready to dive deeper and explore the full range of components and features Matro UI has to offer. Whether you're building a simple website or a complex web application, Matro UI provides you  <Link to="/docs/compontents/view">with the tools</Link> you need to create beautiful and functional user interfaces.
 
-To explore more components, check out the <a href="/docs/compontents/view">components page</a>. Happy coding!
+To explore more components, check out the <Link to="/docs/compontents/view">components overview</Link> page. Happy coding!
