@@ -1,0 +1,131 @@
+---
+sidebar_position: 1
+title: <Toggle/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import {Toggle} from "matro-ui";
+
+# Toggle
+
+The `<Toggle/>` is a simple wrapper for a `<Checkbox/>` component to show it as a toggle.
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/inputs/Toggle"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="Toggle"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Toggle } from "matro-ui";
+```
+- `Toggle`: Toggle input
+{/*  */}
+
+ ## Usage
+
+ ```jsx live 
+  <Toggle>Toggle</Toggle>
+```
+
+
+ ## Toggle sizes
+
+ Pass the <code>font-size</code> to change the size of the <I>Toggle</I>. Values can be either <code>px</code>, <code>em</code>, <code>rem</code> or <code>%</code>.
+
+ ```jsx live 
+ <Stack style={{gap: 20, alignItems: "flex-end"}}>
+    <Toggle style={{fontSize: "14px"}} checked>
+      Toggle
+    </Toggle>
+    <Toggle style={{fontSize: "16px"}} checked>
+      Toggle
+    </Toggle>
+    <Toggle style={{fontSize: "1.2rem"}} checked>
+      Toggle
+    </Toggle>
+  </Stack>
+```
+
+ ## Toggle with custom color
+
+ You can override the color scheme of the <I>Toggle</I> to any color by providing the css variable <code>--bg</code>.
+
+ ```jsx live 
+ <Stack style={{gap: 20, alignItems: "flex-end"}}>
+    <Toggle style={{"--bg": "red"}} checked>
+      Toggle
+    </Toggle>
+    <Toggle style={{"--bg": "#48b07d"}} checked>
+      Toggle
+    </Toggle>
+    <Toggle style={{"--bg": "#4848d7"}} checked>
+      Toggle
+    </Toggle>
+ </Stack>
+```
+
+
+
+  </TabItem>
+
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+## Props
+
+<PropsBlock payload={[
+  {
+  title: "name",
+  type: "string",
+  desc: "The name attribute of the Toggle.",
+},
+{
+  title: "value",
+  type: "boolean",
+  desc: "The value of the Toggle."
+},
+{
+  title: "onChange",
+  type: "function",
+  desc: "Callback function triggered when the Toggle value changes.",
+},
+{
+  title: "checked",
+  type: "boolean",
+  desc: "Indicates whether the Toggle is checked.",
+},
+{
+  title: "toggle",
+  type: "boolean",
+  desc: "Changes Toggle view to toggle if true.",
+},
+{
+  title: "linear",
+  type: "boolean",
+  desc: "Sets linear type of animation if true.",
+},
+
+]}/>
+
+  </TabItem>
+
+
+
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
+
+
+
+</Tabs>
+</div>
