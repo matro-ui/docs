@@ -1,0 +1,95 @@
+---
+sidebar_position: 1
+title: <Key/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import { highlightLines } from '../../../assets/tools';
+
+# Keyboard Key
+
+The `<Key/>` component show which key or combination of keys performs a given action.
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/other/Key"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="Key"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Key } from "matro-ui";
+```
+- `Key`: Keyboard key component
+{/*  */}
+
+ ## Usage
+
+ ```jsx live 
+<div>
+  <Key>Ctrl</Key> + <Key>M</Key>
+</div>
+```
+
+## Guideline
+
+- Use modifiers such as `"+"`, `"then"`, `"or"` to clearly represent the action to the users.
+- All single letters `A-Z` should be uppercase.
+- Use the symbol as opposed to spelling things out.
+- Use the symbols that are commonly used. `"&"` may not be familiar to users from Central Europe or Asia.
+
+ {/*  */}
+
+
+ ## Vintage styling
+
+ To add a more vintage look to the `<Key/>`, set the prop `vintage` (val: <I>boolean</I>):
+
+ ```jsx live 
+<div>
+  <Key vintage>Ctrl</Key> + <Key vintage>M</Key>
+</div>
+```
+ 
+ 
+  </TabItem>
+
+
+
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+    <PropsBlock title={<div>Props of <code>{`<Key/>`}</code>:</div>} payload={[
+    {
+      title: "children",
+      type: "React.FC | React.FC[] | string | number",
+      desc: 'Any possible React Children.',
+    },
+    {
+      title: "vintage",
+      type: "boolean",
+      desc: "Vintage styling if set to true.",
+      def: "false"
+    },
+    ]}/>
+
+  </TabItem>
+
+
+
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
+
+
+
+</Tabs>
+</div>
