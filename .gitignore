@@ -25,3 +25,8 @@ yarn-error.log*
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
+
+# lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
