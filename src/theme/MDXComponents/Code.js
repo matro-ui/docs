@@ -2,7 +2,12 @@ import React from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import CodeInline from '@theme/CodeInline';
 import * as provider from "matro-ui";
-import { IoBluetoothOutline, IoLayersOutline, IoSearch, IoMailUnreadOutline } from "react-icons/io5";
+import * as io5 from "react-icons/io5";
+import * as pi from "react-icons/pi";
+import { IoIosArrowForward } from "react-icons/io";
+import Link from '@docusaurus/Link';
+import I from "../../../assets/components/I"
+import { v4 as uuid } from "uuid";
 function shouldBeInline(props) {
   return (
     // empty code blocks have no props.children,
@@ -14,10 +19,13 @@ function shouldBeInline(props) {
   );
 }
 
+
+
+
 export default function MDXCode(props) {
   return shouldBeInline(props) ? (
     <CodeInline {...props} />
   ) : (
-    <CodeBlock {...props} scope={{ ...provider, IoBluetoothOutline, IoLayersOutline, IoSearch, IoMailUnreadOutline }} />
+    <CodeBlock {...props} scope={{ ...provider, ...io5, ...pi, IoIosArrowForward, Link, I, uuid }} />
   );
 }
