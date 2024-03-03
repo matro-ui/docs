@@ -1,0 +1,124 @@
+---
+sidebar_position: 1
+title: <Spinner/>
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import s from '../../../src/css/mdx.module.css';
+import Sources from "../../../assets/components/Sources/Sources";
+import PropsBlock from "../../../assets/components/Props/Props.jsx";
+import I from "../../../assets/components/I";
+import {Checkbox} from "matro-ui";
+
+# Spinner
+
+The `<Spinner/>` component visually indicate that a process is underway and awaiting a change or outcome.
+
+<Sources 
+  git="https://github.com/matro-ui/matro-ui/tree/main/dist/progress/Spinner"
+  npmjs="https://www.npmjs.com/package/matro-ui" 
+  name="Spinner"
+/>
+
+
+<div className={s.tabs}>
+<Tabs className={s.parent}>
+  <TabItem value="usage" label="Usage" attributes={{className: [s.item, s.usage]}}>
+## Import 
+
+```jsx
+import { Spinner } from "matro-ui";
+```
+- `Spinner`: Spinner component by itself.
+{/*  */}
+
+ ## Usage
+
+ ```jsx live 
+  <Spinner />
+```
+
+## Spinner Size
+
+To change the size of `<Spinner/>`, simply set the `size` prop (val.<I>"XS"</I> | <I>"S"</I> | <I>"M"</I> | <I>"L"</I> | <I>"XL"</I>):
+
+ ```jsx live 
+  <Spinner size="XL" />
+```
+
+## Color Scheme
+ 
+To change the color of `<Spinner/>`, set the `colorScheme` prop (val. <I>"red"</I> | <I>"orange"</I> | <I>"yellow"</I> | <I>"green"</I> | <I>"cyangreen"</I> | <I>"cyanblue"</I> | <I>"blue"</I> | <I>"purple"</I> | <I>"pink"</I>):
+
+ ```jsx live 
+<Stack>
+  <Spinner size="M" colorScheme="pink" />
+  <Spinner size="M" colorScheme="orange" />
+  <Spinner size="M" colorScheme="cyanblue" />
+</Stack>
+```
+
+## Conditional Rendering
+
+If you need to hide the `<Spinner/>`, you can set the `hidden` prop to <I>true</I>, or use a ternary JSX statement:
+
+```jsx live 
+function demo() {
+  const [visible, setVisible] = React.useState(true);
+  return (
+    <Stack column>
+
+
+    <LabelText>Example of hiding with propㅤ<I>"hidden"</I></LabelText>
+    <Spinner hidden={!visible} />
+
+    <LabelText>Example of conditional rendering</LabelText>
+    {visible ? <Spinner /> : ""}
+
+      
+      <Button 
+        onClick={() => setVisible(!visible)} 
+        rightIcon="⚙️">
+        toggle visibility
+      </Button>
+    </Stack>
+  );
+}
+```
+
+</TabItem>
+
+
+
+  <TabItem value="props" label="Props" attributes={{className: [s.item, s.props]}}>
+    <PropsBlock title={<div>Props of <code>{`<Spinner/>`}</code>:</div>} payload={[
+    {
+      title: "size",
+      type: <><I>"XS"</I> | <I>"S"</I> | <I>"M"</I> | <I>"L"</I> | <I>"XL"</I></>,
+      desc: <>size of the <code>{`<Spinner/>`}</code>.</>,
+      def: '"S"'
+    },
+    {
+      title: "colorScheme",
+      type: '"red" | "orange" | "yellow" | "green" | "cyangreen" | "cyanblue" | "blue" | "purple" | "pink"',
+      desc: "Shows last divider if set to true.",
+    },
+    {
+      title: "hidden",
+      type: 'boolean',
+      desc: "Hidden if set to true.",
+    },
+    ]}/>
+
+  </TabItem>
+
+
+
+  {/* <TabItem value="extra" label="Extras" attributes={{className: [s.item, s.extra]}}>
+  </TabItem> */}
+
+
+
+</Tabs>
+</div>
