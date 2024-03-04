@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://matra-ui.github.io/blog</id>
-    <title>Matro UI Docs Blog</title>
+    <title>Matro UI Documentation Blog</title>
     <updated>2019-05-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://matra-ui.github.io/blog"/>
-    <subtitle>Matro UI Docs Blog</subtitle>
+    <subtitle>Matro UI Documentation Blog</subtitle>
     <icon>https://matra-ui.github.io/img/icon.svg</icon>
     <entry>
         <title type="html"><![CDATA[First Blog Post]]></title>
