@@ -6,7 +6,7 @@ import * as io5 from "react-icons/io5";
 import * as pi from "react-icons/pi";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from '@docusaurus/Link';
-import I from "../../../assets/components/I"
+import I from "../../../src/components/I"
 import { v4 as uuid } from "uuid";
 function shouldBeInline(props) {
   return (

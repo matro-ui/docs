@@ -4,14 +4,12 @@ import s from './index.module.css';
 import { IoSearch } from "react-icons/io5";
 import { InputChildButton, InputText, InputTextField } from 'matro-ui';
 
-const SearchInput = () => {
-  const [value, setValue] = useState("");
-  const handleChange = (value) => setValue(value)
+const SearchInput = ({ handleChange, searchQuery }) => {
 
   return (
     <InputText
       className={s.searchinput}
-      value={value}
+      value={searchQuery}
       onChange={handleChange}
       hue="100"
       placeholder="Search..."
@@ -20,7 +18,7 @@ const SearchInput = () => {
       <InputTextField />
       <InputChildButton
         children={<IoSearch />}
-        onClick={() => { alert("Query: " + value); handleChange(""); }} />
+        onClick={handleChange} />
     </InputText>
   )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import s from './index.module.css';
-import Image from '../Image/Image';
 import Link from '@docusaurus/Link';
 import { useHistory } from '@docusaurus/router';
 

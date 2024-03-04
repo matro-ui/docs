@@ -6,10 +6,10 @@ title: <Checkbox/>
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import s from '../../../src/css/mdx.module.css';
-import Sources from "../../../assets/components/Sources/Sources";
-import PropsBlock from "../../../assets/components/Props/Props.jsx";
-import I from "../../../assets/components/I";
-import {Checkbox} from "matro-ui";
+import Sources from "../../../src/components/Sources/Sources";
+import PropsBlock from "../../../src/components/Props/Props.jsx";
+import I from "../../../src/components/I";
+import { Checkbox } from "matro-ui";
 
 # Checkbox
 
@@ -58,13 +58,13 @@ import { Checkbox } from "matro-ui";
 
  ```jsx live 
  <Stack style={{gap: 20, alignItems: "flex-end"}}>
+    <Checkbox style={{fontSize: "10px"}} checked>
+      Checkbox
+    </Checkbox>
     <Checkbox style={{fontSize: "14px"}} checked>
       Checkbox
     </Checkbox>
-    <Checkbox style={{fontSize: "16px"}} checked>
-      Checkbox
-    </Checkbox>
-    <Checkbox style={{fontSize: "1.2rem"}} checked>
+    <Checkbox style={{fontSize: "1.6rem"}} checked>
       Checkbox
     </Checkbox>
   </Stack>
@@ -94,13 +94,13 @@ import { Checkbox } from "matro-ui";
 
  ```jsx live 
  <Stack style={{gap: 20, alignItems: "flex-end"}}>
+    <Checkbox style={{fontSize: "10px"}} checked toggle>
+      Checkbox
+    </Checkbox>
     <Checkbox style={{fontSize: "14px"}} checked toggle>
       Checkbox
     </Checkbox>
-    <Checkbox style={{fontSize: "16px"}} checked toggle>
-      Checkbox
-    </Checkbox>
-    <Checkbox style={{fontSize: "1.2rem", "--bg": "#48b07d"}} checked toggle>
+    <Checkbox style={{fontSize: "1.6rem", "--bg": "#48b07d"}} checked toggle>
       Checkbox
     </Checkbox>
  </Stack>

@@ -21,7 +21,7 @@
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "docusaurus-plugin-fix-react": "^1.0.5",
-    "matro-ui": "file:../matro-ui/dist",
+    "matro-ui": "file:../matro-ui",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
