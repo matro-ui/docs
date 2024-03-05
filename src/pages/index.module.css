@@ -8,16 +8,231 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  box-sizing: border-box;
+  padding: 0 0 2rem;
+  color: #302f38;
+
+  border-bottom: 3px solid rgb(79, 59, 133);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+[data-theme="dark"] .heroBanner {
+  color: #fff;
+  background: radial-gradient(farthest-corner at bottom center, transparent, transparent), linear-gradient(to bottom, transparent, rgb(99, 75, 163, 0.5), rgb(99 75 163));
+}
+
+.hero__title {
+  display: block;
+  font-size: 4.2rem;
+  font-weight: 800;
+  max-width: 720px;
+  line-height: 120%;
+}
+
+.hero__title span {
+  display: inline-block;
+  background-image: linear-gradient(to right, #785bdb, #302853);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+[data-theme="dark"] .hero__title span {
+  background-image: linear-gradient(to right, #785bdb, #cfc3ff);
+}
+
+.hero__subtitle {
+  font-size: 1.28rem;
+  line-height: 180%;
+  max-width: 460px;
+  margin: 0 auto 3rem;
+}
+
+[data-theme="dark"] .hero__subtitle {
+  color: #a39fba;
+}
+
+.hero__title {
+  margin: 0 auto 2rem;
+}
+
+.buttons a {
+  font-size: 1.18rem;
+  padding: 0.8em 0.9em;
+  margin-right: 1em;
+  transition: 0s, transform 200ms ease, background 200ms ease;
+}
+
+.buttons a:nth-child(1) {
+  border: none;
+}
+
+
+.buttons a:nth-child(1):hover {
+  box-shadow: 0 1px 1px 0px hwb(var(--hue) 30% 21%);
+}
+
+
+.buttons a:nth-last-child(1) {
+  margin-right: 0;
+  box-shadow: 0 0.5px 1px 0px #e0e6f5;
+}
+
+
+
+.buttons a:nth-last-child(1):hover {
+  border-color: rgba(170, 174, 180, 0.3);
+}
+
+[data-theme="dark"] .buttons a:nth-last-child(1) {
+  box-shadow: 0 1px 1px 0px #1e1e1e;
+  border: none;
+  background: linear-gradient(160deg, #00000069, black);
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 996px) {
+  .hero__title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    max-width: 650px;
+    margin-bottom: 0.9rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.26rem;
+    margin-bottom: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .hero__title {
+    font-size: 3.4rem;
+    max-width: 600px;
+    margin-bottom: 1rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.26rem;
+    margin-bottom: 1.7rem;
+  }
+}
+
+
+@media only screen and (max-width: 650px) {
+  .hero__title {
+    font-size: 3.2rem;
+    max-width: 520px;
+  }
+
+  .hero__subtitle {
+    font-size: 1.26rem;
+    margin-bottom: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .hero__title {
+    font-size: 3rem;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .heroBanner {
+    min-height: 450px;
+    height: calc(90vh - var(--ifm-navbar-height));
+    padding: 0 0 1rem;
+  }
+
+  .hero__title {
+    font-size: 2.8rem;
+    max-width: 100%;
+    padding: 0 10px;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.16rem;
+    margin-bottom: 1.7rem;
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .buttons {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .buttons a {
+    flex: 1;
+  }
+
+  .buttons a:nth-child(1) {
+    margin-right: 0.5rem;
+    flex: 1.5;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .heroBanner {
+    min-height: 400px;
+    height: calc(96vh - var(--ifm-navbar-height));
+    padding: 0 0 0.5rem;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+    max-width: 100%;
+    padding: 0 10px;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.06rem;
+    margin-bottom: 1.7rem;
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .heroBanner {
+    min-height: 320px;
+    padding: 30px 0;
+  }
+
+  .heroBanner>div {
+    padding: 10px;
+  }
+
+  .hero__title {
+    font-size: 2.3rem;
+    max-width: 100%;
+    padding: 0 5px;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.06rem;
+    margin-bottom: 1.7rem;
+    flex: 1;
+  }
 }

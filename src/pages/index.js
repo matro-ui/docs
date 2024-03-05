@@ -1,26 +1,30 @@
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-
 import Heading from '@theme/Heading';
-import styles from './index.module.css';
+import s from './index.module.css';
+import { Footer, SupportCTA } from '../components/';
+import { Button } from 'matro-ui/src/other/Button';
+import { IoArrowForwardOutline, IoLogoGithub } from 'react-icons/io5';
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={s.heroBanner}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          Matro UI
+        <Heading as="h1" className={s.hero__title}>
+          <span>Streamlined UI</span> Library for React Apps.
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Tutorial - 4min ⏱️
-          </Link>
+        <p className={s.hero__subtitle}>
+          Matro UI is a simple, modular library that provides all essential components for your React applications.
+        </p>
+        <div className={s.buttons}>
+          <Button
+            rightIcon={<IoArrowForwardOutline />}
+            hue="250"
+            as={<Link to="/docs/intro" />}>Get Started</Button>
+          <Button
+            leftIcon={<IoLogoGithub />}
+            as={<a href="https://github.com/matro-ui/matro-ui/" target='_blank' />}
+          >Github</Button>
         </div>
       </div>
     </header>
@@ -28,15 +32,15 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Main Page`}
-      description="Description will go into a meta tag in <head />">
+      title={`Matro UI - a simple, modular library that provides all essential components for your React applications.`}
+      description="Matro UI is a simple, modular library that provides all essential components for your React applications.">
       <HomepageHeader />
       <main>
-        {/* <HomepageFeatures /> */}
+        <SupportCTA />
       </main>
+      <Footer />
     </Layout>
   );
 }
