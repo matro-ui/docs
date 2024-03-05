@@ -10,7 +10,7 @@ const ComponentsPage = () => {
   const [filteredData, setFilteredData] = React.useState(data);
 
   const handleChange = (event) => {
-    const query = event.target.value.toLowerCase();
+    const query = event?.target?.value?.toLowerCase() || "";
     setSearchQuery(query);
     filterData(query);
   };
