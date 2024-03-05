@@ -1,0 +1,7 @@
+export { default as ComponentsPage } from "./Components/ComponentsPage"
+export { default as Footer } from "./Footer/"
+export { default as I } from "./I"
+export { default as Props } from "./Props/Props"
+export { default as Sources } from "./Sources/Sources"
+export { default as SupportCTA } from "./SupportCTA/SupportCTA"
+export { default as NavToContribute } from "./NavToContribute"
