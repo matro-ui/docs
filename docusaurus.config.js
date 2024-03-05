@@ -6,7 +6,7 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 const path = require('path');
-const prism_theme1 = { ...prismThemes.dracula, plain: { color: prismThemes.dracula.plain.color || "black", backgroundColor: "var(--ifme-codeblock-bg)" } };
+const prism_theme__old = { ...prismThemes.dracula, plain: { color: prismThemes.dracula.plain.color || "black", backgroundColor: "var(--ifme-codeblock-bg)" } };
 const prism_theme = prismThemes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
@@ -18,7 +18,7 @@ const config = {
     "@docusaurus/theme-live-codeblock"
   ],
 
-  title: 'Matro UI Docs',
+  title: 'Matro UI Documentation',
   tagline: '👁️ Highly optimized UI Components in one, tiny package for your React Applications.',
   favicon: 'img/icon.svg',
 
