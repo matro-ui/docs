@@ -22,14 +22,12 @@ const Location = () => {
 
 
 const NavToContribute = () => {
-  const { url, prevUrl } = Location()
 
   const location = useLocation();
   let from = location.state?.from?.pathname;
 
-  console.log(url, prevUrl, from);
   useEffect(() => {
-    if (document?.referrer === "") {
+    if (document?.referrer === "" && window) {
       window.location.href = "https://github.com/matro-ui/matro-ui/blob/main/CONTRIBUTING.md"
     }
   }, [])
