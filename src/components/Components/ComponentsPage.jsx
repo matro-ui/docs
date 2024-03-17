@@ -8,6 +8,11 @@ import data from "../../../assets/data/components";
 const ComponentsPage = () => {
   const [searchQuery, setSearchQuery] = React.useState("");
   const [filteredData, setFilteredData] = React.useState(data);
+  const [hasItems, setHasItems] = React.useState(true);
+
+  React.useEffect(() => {
+    setHasItems(dataHasNonEmptyArray(filteredData));
+  }, [filteredData]);
 
   const handleChange = (event) => {
     const query = event?.target?.value?.toLowerCase() || "";
@@ -25,6 +30,16 @@ const ComponentsPage = () => {
 
     setFilteredData(filteredData);
   };
+
+  const dataHasNonEmptyArray = (obj) => {
+    for (const key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        if (Array.isArray(obj[key]) && obj[key].length > 0)
+          return true;
+      }
+    }
+    return false;
+  }
 
   return (
     <div>
@@ -44,6 +59,7 @@ const ComponentsPage = () => {
         }
         return null;
       })}
+      {hasItems ? "" : <span className={s.no_items}>No items were found for the specified query: <i>{searchQuery}</i></span>}
     </div>
   );
 };
