@@ -8,7 +8,7 @@ const Sources = ({ git, npmjs, name }) => {
     <div className={s.sources}>
       <Button
         leftIcon={<FaGithub />}
-      >Source</Button>
+        as={<a href={git} target='_blank' />}>Source</Button>
       <Button
         leftIcon={<FaNpm color="#e24141" style={{ fontSize: "2em" }} />}
         as={<a href={npmjs} target='_blank' />}>@matro-ui/{name}</Button>
