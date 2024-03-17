@@ -32,7 +32,13 @@ const SupportCTA = () => {
       desc: "Sponsor the creator, Patryk Jaworski",
       link: "https://www.patreon.com/patrykjaworski",
       logo: "/img/mainpage/patreon.svg",
-
+    },
+    {
+      id: "5d4dbe36-b427-44b6-a69c-dc6c7e6a0d7a",
+      title: "Ko-fi",
+      desc: "Sponsor the Matro UI maintainers",
+      link: "https://ko-fi.com/patrykjaworski",
+      logo: "/img/mainpage/kofi.png",
     }
   ]
   return (
