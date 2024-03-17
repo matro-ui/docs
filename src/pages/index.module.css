@@ -54,7 +54,7 @@
 }
 
 [data-theme="dark"] .hero__subtitle {
-  color: #a39fba;
+  color: #bfb7eb;
 }
 
 .hero__title {
@@ -62,14 +62,23 @@
 }
 
 .buttons a {
-  font-size: 1.18rem;
-  padding: 0.8em 0.9em;
+  font-size: 1.14rem;
+  font-weight: 500;
+  padding: 0.4em 1.2em;
   margin-right: 1em;
+  height: 52px;
+  box-sizing: border-box;
   transition: 0s, transform 200ms ease, background 200ms ease;
 }
 
 .buttons a:nth-child(1) {
   border: none;
+  padding-right: 0.8em;
+}
+
+.buttons a:nth-child(1) svg {
+  font-size: 1.38em;
+  transform: translateY(0.5px);
 }
 
 
@@ -186,7 +195,7 @@
   }
 
   .buttons a:nth-child(1) {
-    margin-right: 0.5rem;
+    margin-right: 0.7rem;
     flex: 1.5;
     justify-content: space-evenly;
   }

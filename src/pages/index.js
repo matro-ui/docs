@@ -5,6 +5,7 @@ import s from './index.module.css';
 import { Footer, SupportCTA } from '../components/';
 import { Button } from 'matro-ui/src/other/Button';
 import { IoArrowForwardOutline, IoLogoGithub } from 'react-icons/io5';
+import { LuChevronRight } from 'react-icons/lu';
 
 function HomepageHeader() {
   return (
@@ -18,7 +19,7 @@ function HomepageHeader() {
         </p>
         <div className={s.buttons}>
           <Button
-            rightIcon={<IoArrowForwardOutline />}
+            rightIcon={<LuChevronRight />}
             hue="250"
             as={<Link to="/docs/intro" />}>Get Started</Button>
           <Button
